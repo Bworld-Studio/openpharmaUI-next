@@ -1,0 +1,15 @@
+{
+  "name": "openpharmaUI-next",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vue": "^3.0.4"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.4",
+    "vite": "^2.0.0-beta.13"
+  }
+}
