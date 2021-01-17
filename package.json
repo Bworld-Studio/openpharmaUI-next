@@ -1,6 +1,6 @@
 {
 	"name": "openpharma WebUI next",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "openpharma WebUI",
 	"author": "GrayFawkes <gray.fawkes@outlook.com>",
 	"scripts": {
@@ -9,7 +9,10 @@
 	},
 	"dependencies": {
 		"axios": "^0.21.1",
-		"vue": "^3.0.5"
+		"bootstrap": "^5.0.0-beta1",
+		"vue": "^3.0.5",
+		"vue-i18n": "^9.0.0-rc.2",
+		"vue-router": "^4.0.3"
 	},
 	"devDependencies": {
 		"@vitejs/plugin-vue": "^1.0.6",

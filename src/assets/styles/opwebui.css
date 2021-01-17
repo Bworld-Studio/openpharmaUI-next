@@ -1,0 +1,18 @@
+:root {
+	--main-color1: #3AB595;
+	--main-color2: #1F2020;
+}
+
+@font-face {
+	font-family: "Ubuntu Medium";
+	src: url("~@/assets/fonts/Ubuntu-Medium.ttf") format('truetype')
+}
+
+@font-face {
+	font-family: "OpenSans";
+	src: url("~@/assets/fonts/OpenSans-Regular.ttf") format('truetype')
+}
+
+.bg-dark {
+	background-color: var(--main-color2) !important;
+}
