@@ -1,0 +1,77 @@
+{
+	"global": {
+		"locale": "Français",
+		"lang": "fr",
+		"openPharma": "OpenPharma",
+		"version": "WebUI 0.1.3"
+	},
+	"home": {
+		"title": "Accueil"
+	},
+	"buttons": {
+		"yes-button": "Oui",
+		"no-button": "Non",
+		"save-button": "Sauvegarder",
+		"cancel-button": "Annuler",
+		"close-button": "Fermer",
+		"update-button": "Mettre à jour",
+		"edit-button": "Editer",
+		"delete-button": "Supprimer",
+		"search-button": "Rechercher"
+	},
+	"clients": {
+		"menu": "Patients",
+		"title": "Liste des patients",
+		"text": "Dans ce menu vous trouverez la base patients",
+		"action1": "Liste des patients",
+		"action2": "Nouveau patient"
+	},
+	"client": {
+		"numss-input": "Numéro de Sécurité Sociale",
+		"keyss-input": "Clé",
+		"name-input": "Nom",
+		"firstname-input": "Prénom",
+		"birthdate-input": "Date de naissance",
+		"address-input": "Adresse",
+		"address2-input": "Complément d'adresse",
+		"city-input": "Ville",
+		"zipcode-input": "Code postal",
+		"cellphone-input": "Numéro Portable",
+		"phone-input": "Numéro téléphone",
+		"center-input": "Centre CPAM",
+		"viewAt-input": "Dernière visite",
+		"messages": {
+			"creation-success": "Patient créé avec succés",
+			"creation-error": "Erreur lors de la création du patient",
+			"update-success": "Patient mis à jour avec succés",
+			"update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
+		}
+	},
+	"products": {
+		"menu": "Produits",
+		"title": "Liste des produits",
+		"text": "Dans ce menu vous trouverez les différents produits disponibles",
+		"action1": "Liste des produits",
+		"action2": "Ajouter un produit"
+	},
+	"orders": {
+		"menu": "Commandes",
+		"title": "Liste des commandes",
+		"text": "Dans ce menu vous trouverez les commandes en cours ou passées",
+		"action1": "Liste des commandes",
+		"action2": "Créééééer une commande"
+	},
+	"search": {
+		"menu": "Recherche",
+		"placeholder-input": "Tapez pour chercher"
+	},
+	"settings": {
+		"menu": "Paramètres",
+		"title": "Paramètres"
+	},
+	"updates": {
+		"menu": "Bases de données",
+		"title": "Mises à jour des bases de données"
+	}
+}
