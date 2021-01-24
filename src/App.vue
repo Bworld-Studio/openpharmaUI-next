@@ -3,31 +3,38 @@
 <nav class="nav navbar-dark bg-dark">
 	<ul class="nav navbar-nav flex-column">
 		<a class="navbar-brand" href="#" style="font-family:'Ubuntu Medium">
-			<img src="@/assets/logo.png" style="margin-right: 8px; width:41px">
-			<span>{{ $t('global.openPharma') }}</span>
+			<img src="./assets/logo.png" style="margin-right: 8px; width:41px">
+			<!-- <span>{{ $t('global.openPharma') }}</span> -->
+			<span>openpharma</span>
 			<span class="version_number">WebUI 0.1.3</span>
 		</a>
 		<li class="nav-item">
-			<a class="nav-link" href="/Clients">{{ $t('clients.menu') }}</a>
+			<!-- <a class="nav-link" href="/Clients">{{ $t('clients.menu') }}</a> -->
+			<a class="nav-link" href="/Clients">Patients</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/Products">{{ $t('products.menu') }}</a>
+			<!-- <a class="nav-link" href="/Products">{{ $t('products.menu') }}</a> -->
+			<!-- <a class="nav-link" href="/Products">Produis</a> -->
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/Orders">{{ $t('orders.menu') }}</a>
+			<!-- <a class="nav-link" href="/Orders">{{ $t('orders.menu') }}</a> -->
+			<a class="nav-link" href="/Orders">Commandes</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/Updates">{{ $t('updates.menu')}}</a>
+			<!-- <a class="nav-link" href="/Updates">{{ $t('updates.menu')}}</a> -->
+			<a class="nav-link" href="/Updates">Mises à jours</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/Settings">{{ $t('settings.menu') }}</a>
+			<!-- <a class="nav-link" href="/Settings">{{ $t('settings.menu') }}</a> -->
+			<a class="nav-link" href="/Settings">Paramètres</a>
 		</li>
 	</ul>
 </nav>
 <div class="container-fluid">
 	<nav class="nav navbar-nav bg-dark flex-row">
 		<div>
-			<input class="form-control" type="search" v-bind:placeholder="$t('search.placeholder-input')" aria-label="Search" aria-describedby="button-search">
+			<!-- <input class="form-control" type="search" v-bind:placeholder="$t('search.placeholder-input')" aria-label="Search" aria-describedby="button-search"> -->
+			<input class="form-control" type="search" aria-label="Search" aria-describedby="button-search">
 			<div class="input-group-append">
 				<button class="btn btn-success btn-sm my-2 my-sm-0 btn-outline-secondary" type="button" id="button-search" v-on:click="search()">
 					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search text-light" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +65,7 @@
 
 <script>
 import axios from 'axios' // eslint-disable-line no-unused-vars
-import ApiCommon from './common/api.common' // eslint-disable-line no-unused-vars
+// import ApiCommon from './common/api.common' // eslint-disable-line no-unused-vars
 export default {
 	name: 'App',
 	data () {
@@ -76,20 +83,20 @@ export default {
 			this.showModal = true
 		},
 		getServerStatus () {
-			const me = this
-			setInterval(function () {
-				var serverStatus = null
-				axios.get('/api/status').then(
-					result => {
-						console.log(serverStatus)
-						if (result.status === 200) me.serverStatus = true
-					},
-					error => {
-						console.error(error)
-						me.serverStatus = false
-					}
-				)
-			}, 1000)
+		// 	const me = this
+		// 	setInterval(function () {
+		// 		var serverStatus = null
+		// 		axios.get('/api/status').then(
+		// 			result => {
+		// 				console.log(serverStatus)
+		// 				if (result.status === 200) me.serverStatus = true
+		// 			},
+		// 			error => {
+		// 				console.error(error)
+		// 				me.serverStatus = false
+		// 			}
+		// 		)
+		// 	}, 1000)
 		}
 	}
 }

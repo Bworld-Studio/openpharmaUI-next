@@ -1,9 +1,10 @@
-import Home from '@/components/home/Home'
+import Home from './components/home/Home'
 
 export default [
 	{
-		path: '/',
-		name: 'home',
-		component: Home
+		'/': Home,
+		// path: '/',
+		// name: 'home',
+		// component: Home
 	}
 ]

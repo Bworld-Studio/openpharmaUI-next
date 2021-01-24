@@ -1,6 +1,6 @@
 {
 	"name": "openpharma WebUI next",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "openpharma WebUI",
 	"author": "GrayFawkes <gray.fawkes@outlook.com>",
 	"scripts": {
@@ -15,10 +15,11 @@
 		"vue-router": "^4.0.3"
 	},
 	"devDependencies": {
+		"@intlify/vite-plugin-vue-i18n": "^1.0.0-beta.12",
 		"@vitejs/plugin-vue": "^1.0.6",
 		"@vue/compiler-sfc": "^3.0.5",
 		"eslint": "^7.18.0",
 		"eslint-plugin-vue": "^7.4.1",
-		"vite": "^2.0.0-beta.30"
+		"vite": "^2.0.0-beta.46"
 	}
 }
