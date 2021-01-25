@@ -1,4 +1,6 @@
+import path from 'path'
 import vue from '@vitejs/plugin-vue'
+import vueI18n from '@intlify/vite-plugin-vue-i18n'
 
 export default {
 	server: {
@@ -12,5 +14,13 @@ export default {
 		// 	}
 		// }
 	},
-	plugins: [vue()]
+	alias: {
+		'vue-i18n': 'vue-i18n/dist/vue-i18n.runtime.esm-bundler.js'
+	},
+	plugins: [
+		vue(),
+		vueI18n({
+			include: path.resolve(__dirname, './locales/**')
+		})
+	]
 }

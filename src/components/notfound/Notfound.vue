@@ -3,14 +3,14 @@
 </template>
 <script>
 export default {
-	name: '404',
+	name: 'NotFound',
 	data () {
 		return {
 
 		}
 	},
 	mounted () {
-
+		console.log('404')
 	},
 	methods: {
 

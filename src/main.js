@@ -7,28 +7,37 @@ import './assets/styles/op.css'
 import './assets/styles/opwebui.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
-// Internationalisation
-const loadLocaleMessages = function () {
-	debugger
-	const locales = import.meta.glob('./locales/**/*.json')
+// i18n
+// const loadLocaleMessages = function () {
+// 	let locales = import.meta.glob('./locales/*.json')
+// 	let messages = {}
 
-	// import routes from './locales/**/*.json'
-	debugger
-	console.log(routes)
-	// const locales = import('../locales', true, /[A-Za-z0-9-_,\s]+\.json$/i)
-	// console.log(locales)
-	// const messages = {}
-	// locales.keys().forEach(key => {
-	// 	const matched = key.match(/([A-Za-z0-9-_]+)\./i)
-	// 	if (matched && matched.length > 1) {
-	// 		const locale = matched[1]
-	// 		messages[locale] = locales(key)
-	// 	}
-	// })
-	return messages
-}
+// 	Object.keys(locales).forEach(key => {
+// 		const matched = key.match(/([A-Za-z0-9-_]+)\./i)
+// 		if (matched && matched.length > 1) {
+// 			const locale = matched[1]
+// 			messages[locale] = Object.keys(locale)
+// 		}
+// 	})
+// 	// console.log(locales)
+// 	// const locales = import('../locales', true, /[A-Za-z0-9-_,\s]+\.json$/i)
+// 	// console.log(locales)
+// 	// const messages = {}
+// 	// let localesTab = locales.keys()
+// 	// console.log(localesTab)
+// 	// locales.keys().forEach(key => {
+// 	// 	debugger
+// 	// // 	const matched = key.match(/([A-Za-z0-9-_]+)\./i)
+// 	// // 	if (matched && matched.length > 1) {
+// 	// // 		const locale = matched[1]
+// 	// // 		messages[locale] = locales(key)
+// 	// // 	}
+// 	// })
+// 	return messages
+// }
 
 const i18n = createI18n({
+	legacy: true,
 	locale: 'fr',
 	fallbackLocale: 'en',
 	messages: loadLocaleMessages(),

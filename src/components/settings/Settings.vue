@@ -1,15 +1,16 @@
 <template>
 	<div id="products-list" class="container">
-		<div>
+		<div>Settings</div>
+		<!-- <div>
 			<div class="">
 				<h1 class="text-center">Settings</h1>
 			</div>
 			<div class="navbar-nav mr-auto locale-changer">
-				<select v-model="$i18n.locale" class="form-control-sm">
+				<select v-model="$i18n.locales" class="form-control-sm">
 					<option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang.lang">{{ lang.locale }}</option>
 				</select>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </template>
 
@@ -18,6 +19,8 @@
 </style>
 
 <script>
+
+// import axios from 'axios'
 export default {
 	name: 'Settings',
 	data () {

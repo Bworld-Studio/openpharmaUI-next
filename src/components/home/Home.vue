@@ -1,6 +1,7 @@
 <template>
 <div class="container-fluid">
-	<div class="cards">
+	<div>Home</div>
+	<!-- <div class="cards">
 		<div class="card" v-for="(view) in views" :key="view.id" style="width: 25rem;"> <!-- v-bind:key="view.id" v-bind:title="{{$t(view.label)}}" -->
 			<div class="card-body">
 				<h5 class="card-title">{{$t(view.title)}}</h5>
@@ -9,7 +10,7 @@
 				<a v-bind:href="view.path2" class="card-link">{{$t(view.action2)}}</a>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </div>
 </template>
 
@@ -19,6 +20,8 @@
 </style>
 
 <script>
+// import axios from 'axios'
+
 export default {
 	name: 'Home',
 	data () {

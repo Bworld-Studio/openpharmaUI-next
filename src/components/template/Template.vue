@@ -13,7 +13,7 @@
 
 </style>
 <script>
-// const axios = require('axios')
+// import axios from 'axios'
 
 export default {
 	name: 'Template',		// Nom du composant

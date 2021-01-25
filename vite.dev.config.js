@@ -14,6 +14,9 @@ export default {
 		// 	}
 		// }
 	},
+	alias: {
+		'vue-i18n': 'vue-i18n/dist/vue-i18n.runtime.esm-bundler.js'
+	},
 	plugins: [
 		vue(),
 		vueI18n({

@@ -12,6 +12,7 @@ export default {
 		'eol-last': 0,
 		'indent': [2, 'tab'],
 		'no-tabs': 0,
-		'allowIndentationTabs': 1
+		'allowIndentationTabs': 1,
+		'no-multiple-template-root': 0
 	}
 }

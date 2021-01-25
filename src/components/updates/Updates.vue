@@ -13,13 +13,15 @@
 </style>
 
 <script>
-const axios = require('axios')
+// const axios = require('axios')
+import axios from 'axios'
 export default {
 	name: 'Updates',
 	data () {
 		return {}
 	},
 	mounted () {
+		console.log('Updates')
 		// this.updateBDPM()
 	},
 	methods: {
