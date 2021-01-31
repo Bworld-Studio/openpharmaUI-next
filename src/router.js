@@ -25,9 +25,9 @@ const Updates = () => import('./components/updates/Updates.vue')
 // 	}
 // ]
 let routes = [
-	{path: '/login', name: 'Login', component: Login},
 	{path: '/', name: 'Home', component: Home},
-	{path: '/home', name: 'Home', component: Home},
+	// {path: '/home', name: 'Home', component: Home},
+	{path: '/login', name: 'Login', component: Login},
 	{path: '/notfound', name: 'NotFound', component: NotFound},
 	{path: '/clients', name: 'Clients', component: Clients},
 	{path: '/client', name: 'Client', component: Client},
@@ -37,7 +37,7 @@ let routes = [
 	{path: '/settings', name: 'Settings', component: Settings},
 	{path: '/template', name: 'Template', component: Template},
 	{path: '/updates', name: 'Updates', component: Updates},
-	{ path: "/:catchAll(.*)", component: NotFound, }
+	{path: "/:catchAll(.*)", component: NotFound}
 ]
 
 // const resourceRoutes = loadRoutes()

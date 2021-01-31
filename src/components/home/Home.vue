@@ -2,15 +2,15 @@
 <div class="container-fluid">
 	<div>Home</div>
 	<!-- <div class="cards">
-		<div class="card" v-for="(view) in views" :key="view.id" style="width: 25rem;"> <!-- v-bind:key="view.id" v-bind:title="{{$t(view.label)}}" -->
+		<div class="card" v-for="(view) in views" :key="view.id" style="width: 25rem;">
 			<div class="card-body">
 				<h5 class="card-title">{{$t(view.title)}}</h5>
 				<p class="card-text">{{$t(view.text)}}</p>
 				<a v-bind:href="view.path1" class="card-link">{{$t(view.action1)}}</a>
 				<a v-bind:href="view.path2" class="card-link">{{$t(view.action2)}}</a>
 			</div>
-		</div>
-	</div> -->
+		</div> -->
+	<!-- </div> -->
 </div>
 </template>
 

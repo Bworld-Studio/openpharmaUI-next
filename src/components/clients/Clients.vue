@@ -30,7 +30,7 @@
 </style>
 
 <script>
-const axios = require('axios')
+import axios from 'axios' // eslint-disable-line no-unused-vars
 
 export default {
 	name: 'Clients',

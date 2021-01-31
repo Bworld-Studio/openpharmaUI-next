@@ -2,7 +2,7 @@
 <div id="app" class="">
 	<nav class="nav navbar-dark bg-dark">
 		<ul class="nav navbar-nav flex-column">
-			<a class="navbar-brand" href="#" style="font-family:'Ubuntu-Medium'">
+			<a class="navbar-brand" href="/" style="font-family:'Ubuntu-Medium'">
 				<img src="./assets/logo.png" style="margin-right: 8px; width:41px">
 				<!-- <span>{{ $t('global.openPharma') }}</span> -->
 				<span>openpharma</span>

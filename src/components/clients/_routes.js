@@ -1,9 +1,9 @@
-import Clients from '@/components/clients/Clients'
+import Clients from './components/clients/Clients'
 
 export default [
 	{
 		path: '/Clients',
-		// name: 'clients',
+		name: 'clients',
 		component: Clients
 	}
 ]

@@ -1,5 +1,5 @@
 <template>
-	<img src="./assets/images/pharmacy/048-pharmacy.svg">
+	<img src="/src/assets/images/pharmacy/048-pharmacy.svg">
 </template>
 <script>
 export default {
