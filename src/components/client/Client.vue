@@ -105,7 +105,7 @@ export default {
 	props: {
 		uuid: ''
 	},
-	mounted () {
+	mounted() {
 		console.log('Component: Client')
 		console.log(this.$route)
 		if (this.$route.params.uuid !== undefined) {
@@ -116,7 +116,7 @@ export default {
 		}
 	},
 	methods: {
-		getClient (uuid) {
+		getClient(uuid) {
 			routes.getClient()
 			var url = '/api/clients/' + uuid
 
@@ -125,11 +125,11 @@ export default {
 					this.mapClient(result.data)
 				}, error => { console.error(error) })
 		},
-		mapClient (pClient) {
-			this.client = pClient
+		mapClient(client) {
+			this.client = client
 			this.client['viewAt'] = new Date()
 		},
-		addClient () {
+		addClient() {
 			this.client.active = true
 			this.client['viewAt'] = new Date()
 
@@ -144,7 +144,7 @@ export default {
 					$('#alertError').alert()	// eslint-disable-line no-undef
 				})
 		},
-		updateClient () {
+		updateClient() {
 			axios.put(`/api/clients/${this.client.uuid}`, this.client)
 				.then(res => {
 					$('#alertSuccess').alert()	// eslint-disable-line no-undef
@@ -157,7 +157,7 @@ export default {
 					$('#alertError').alert()	// eslint-disable-line no-undef
 				})
 		},
-		deleteClient (uuid) {
+		deleteClient(uuid) {
 			axios.delete(`/api/clients/${uuid}`)
 				.then(res => {
 					this.client = {}

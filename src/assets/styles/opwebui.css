@@ -4,15 +4,26 @@
 }
 
 @font-face {
-	font-family: "Ubuntu Medium";
-	src: url("../assets/fonts/Ubuntu-Medium.ttf") format('truetype')
+	font-family: 'Ubuntu-Medium';
+	src: url("../fonts/Ubuntu-Medium.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: "OpenSans";
-	src: url("../assets/fonts/OpenSans-Regular.ttf") format('truetype')
+	font-family: 'OpenSans-REgular';
+	src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: 'Libertine-Regular';
+	src: url("../fonts/LinLibertine_R.ttf") format("truetype");
 }
 
 .bg-dark {
 	background-color: var(--main-color2) !important;
+}
+
+.version {
+	padding-left: .2rem;
+	font-size: .8rem;
+	color: grey;
 }

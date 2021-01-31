@@ -1,12 +1,12 @@
 <template>
-<div id="app">
+<div id="app" class="">
 	<nav class="nav navbar-dark bg-dark">
 		<ul class="nav navbar-nav flex-column">
-			<a class="navbar-brand" href="#" style="font-family:'Ubuntu Medium">
+			<a class="navbar-brand" href="#" style="font-family:'Ubuntu-Medium'">
 				<img src="./assets/logo.png" style="margin-right: 8px; width:41px">
 				<!-- <span>{{ $t('global.openPharma') }}</span> -->
 				<span>openpharma</span>
-				<span class="version_number">WebUI 0.1.3</span>
+				<span class="version">WebUI-next 0.2.1</span>
 			</a>
 			<li class="nav-item">
 				<!-- <a class="nav-link" href="/Clients">{{ $t('clients.menu') }}</a> -->
@@ -30,7 +30,7 @@
 			</li>
 		</ul>
 	</nav>
-	<div class="container-fluid">
+	<div>
 		<nav class="nav navbar-nav bg-dark flex-row">
 			<div>
 				<!-- <input class="form-control" type="search" v-bind:placeholder="$t('search.placeholder-input')" aria-label="Search" aria-describedby="button-search"> -->
@@ -43,19 +43,6 @@
 						</svg>
 					</button>
 				</div>
-				<!-- <div class="ml-2" v-on:click="getServerStatus()">
-					<div v-if="serverStatus">
-						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-broadcast text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 0 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707z"/>
-							<path d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
-						</svg>
-					</div>
-					<div v-else>
-						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-circle-fill text-danger" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-						</svg>
-					</div>
-				</div> -->
 			</div>
 		</nav>
 		<router-view/>
@@ -64,8 +51,7 @@
 </template>
 
 <script>
-import axios from 'axios' // eslint-disable-line no-unused-vars
-// import ApiCommon from './common/api.common' // eslint-disable-line no-unused-vars
+// import axios from 'axios' // eslint-disable-line no-unused-vars
 export default {
 	name: 'App',
 	data () {
