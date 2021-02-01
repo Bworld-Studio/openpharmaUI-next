@@ -1,10 +1,9 @@
-import Home from './components/home/Home'
+const Home = () => import(`./components/home/Home.vue`)
 
 export default [
 	{
-		'/': Home,
-		// path: '/',
-		// name: 'home',
-		// component: Home
+		path: '/',
+		name: 'home',
+		component: Home
 	}
 ]

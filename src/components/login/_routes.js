@@ -1,4 +1,4 @@
-import Login from '@/components/login/Login'
+const Login = () => import(`./components/login/Login.vue`)
 
 export default [
 	{

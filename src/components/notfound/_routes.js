@@ -1,4 +1,4 @@
-import Notfound from '@/components/notfound/Notfound'
+const Notfound = () => import(`./components/notfound/Notfound.vue`)
 
 export default [
 	{

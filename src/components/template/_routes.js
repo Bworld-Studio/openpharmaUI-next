@@ -1,4 +1,4 @@
-import Template from '@/components/template/Template'
+const Template = () => import(`./components/template/Template.vue`)
 
 export default [
 	{

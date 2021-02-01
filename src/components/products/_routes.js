@@ -1,4 +1,4 @@
-import Products from '@/components/products/Products'
+const Products = () => import(`./components/products/Products.vue`)
 
 export default [
 	{

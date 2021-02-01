@@ -1,4 +1,4 @@
-import Updates from '@/components/updates/Updates'
+const Updates = () => import(`./components/updates/Updates.vue`)
 
 export default [
 	{

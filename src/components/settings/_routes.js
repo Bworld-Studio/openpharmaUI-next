@@ -1,4 +1,4 @@
-import Settings from '@/components/settings/Settings'
+const Settings = () => import(`./components/settings/Settings.vue`)
 
 export default [
 	{

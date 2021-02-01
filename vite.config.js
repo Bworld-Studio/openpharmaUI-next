@@ -19,8 +19,8 @@ export default {
 	},
 	plugins: [
 		vue(),
-		vueI18n({
-			include: path.resolve(__dirname, './locales/**')
-		})
+		// vueI18n({
+		// 	// include: path.resolve(__dirname, './locales/**')
+		// })
 	]
 }

@@ -1,4 +1,4 @@
-import Orders from '@/components/orders/Orders'
+const Orders = () => import(`./components/orders/Orders.vue`)
 
 export default [
 	{

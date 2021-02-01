@@ -1,4 +1,4 @@
-import Clients from './components/clients/Clients'
+const Clients = () => import(`./components/clients/Clients.vue`)
 
 export default [
 	{

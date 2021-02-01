@@ -2,54 +2,61 @@ import { createWebHistory, createRouter } from 'vue-router'
 // import Login from './components/login/Login.vue'
 // const Home = { template: '<div>Home</div>' }
 // import Home from './components/home/Home.vue'
-const Login = () => import('./components/login/Login.vue')
-const Home = () => import('./components/home/Home.vue')
-const NotFound = () => import('./components/notfound/NotFound.vue')
-const Clients = () => import('./components/clients/Clients.vue')
-const Client = () => import('./components/client/Client.vue')
-const Orders = () => import('./components/orders/Orders.vue')
-const Products = () => import('./components/products/Products.vue')
-const Search = () => import('./components/search/Search.vue')
-const Settings = () => import('./components/settings/Settings.vue')
-const Template = () => import('./components/template/Template.vue')
-const Updates = () => import('./components/updates/Updates.vue')
-// const Home = () => import('../components/home/Home.vue')
+// const Login = () => import('./components/login/Login.vue')
+// const Home = () => import('./components/home/Home.vue')
+// const NotFound = () => import('./components/notfound/NotFound.vue')
+// const Clients = () => import('./components/clients/Clients.vue')
+// const Client = () => import('./components/client/Client.vue')
+// const Orders = () => import('./components/orders/Orders.vue')
+// const Products = () => import('./components/products/Products.vue')
+// const Search = () => import('./components/search/Search.vue')
+// const Settings = () => import('./components/settings/Settings.vue')
+// const Template = () => import('./components/template/Template.vue')
+// const Updates = () => import('./components/updates/Updates.vue')
+
+// const routes = [
+// 	{path: '/', name: 'Home', component: Home},
+// 	// {path: '/home', name: 'Home', component: Home},
+// 	{path: '/login', name: 'Login', component: Login},
+// 	{path: '/notfound', name: 'NotFound', component: NotFound},
+// 	{path: '/clients', name: 'Clients', component: Clients},
+// 	{path: '/client', name: 'Client', component: Client},
+// 	{path: '/orders', name: 'Orders', component: Orders},
+// 	{path: '/products', name: 'Products', component: Products},
+// 	{path: '/search', name: 'Search', component: Search},
+// 	{path: '/settings', name: 'Settings', component: Settings},
+// 	{path: '/template', name: 'Template', component: Template},
+// 	{path: '/updates', name: 'Updates', component: Updates},
+// 	{path: "/:catchAll(.*)", component: NotFound}
+// ]
 
 // Manually add the Login vue because it's outside the components folder
-// let routes = []
-// let routes = [
-// 	{
-// 		path: '/home',
-// 		name: 'Home',
-// 		component: Home
-// 	}
-// ]
-let routes = [
-	{path: '/', name: 'Home', component: Home},
-	// {path: '/home', name: 'Home', component: Home},
-	{path: '/login', name: 'Login', component: Login},
-	{path: '/notfound', name: 'NotFound', component: NotFound},
-	{path: '/clients', name: 'Clients', component: Clients},
-	{path: '/client', name: 'Client', component: Client},
-	{path: '/orders', name: 'Orders', component: Orders},
-	{path: '/products', name: 'Products', component: Products},
-	{path: '/search', name: 'Search', component: Search},
-	{path: '/settings', name: 'Settings', component: Settings},
-	{path: '/template', name: 'Template', component: Template},
-	{path: '/updates', name: 'Updates', component: Updates},
-	{path: "/:catchAll(.*)", component: NotFound}
-]
+let routes = []
 
-// const resourceRoutes = loadRoutes()
+// Import all of the components routes files
+const loadRoutes = function () {
+	// debugger
+	let routes = []
+	let components = import.meta.globEager('./components/**/_routes.js')
 
-// resourceRoutes.forEach((route) => {
-// 	routes.push(route[0])
-// })
+	for ( const component in components ) {
+		debugger
+		console.log(component)
+		const route = () => import(component) /* @vite-ignore */
+		console.log(route)
+		routes.push(route)
+	}
+	return routes
+}
+
+routes = loadRoutes()
 
 const router = createRouter({
 	history: createWebHistory(),
 	routes,
 })
+
+export default router
 
 // i18n
 // router.beforeEach(async (to, from, next) => {
@@ -71,7 +78,7 @@ const router = createRouter({
 // 	return next()
 // })
 
-export default router
+// export default router
 
 // Import all of the components routes files
 // function loadRoutes () {

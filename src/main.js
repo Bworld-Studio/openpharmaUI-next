@@ -7,7 +7,7 @@ import './assets/styles/op.css'
 import './assets/styles/opwebui.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
-// i18n
+// Internationalisation -- i18n
 const loadLocaleMessages = function () {
 	let locales = import.meta.globEager('./locales/*.json')
 	let messages = {}
@@ -19,6 +19,7 @@ const loadLocaleMessages = function () {
 			messages[locale] = locales[path]
 		}
 	}
+	return messages
 }
 
 const i18n = createI18n({
