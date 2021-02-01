@@ -48,10 +48,9 @@ export default {
 	methods: {
 		getClients () {
 			// Call API
-			debugger
+
 			axios.get('/api/clients').then(
 				result => {
-					debugger
 					// console.log(result.data)
 					this.clients = result.data
 				},
@@ -61,9 +60,13 @@ export default {
 			)
 		},
 		createClient () {
+			// debugger
+			// console.log(router)
+			// console.log($router)
+			// console.log(this.$router.push)
 			this.client = {}
 			this.client.active = true
-			this.$router.push({ name: 'client' })
+			this.$router.push({ name: 'client', params: { uuid: '' } })
 		},
 		// addClient () {
 		// 	console.log(this.client)

@@ -4,61 +4,61 @@
 		<span class="row">
 			<label for="numSSInput">{{$t('client.numss-input')}}</label>
 			<div class="col">
-				<input v-model="client.numSS" v-bind:placeholder="$t('client.numss-input')" type="text" id="numSSInput" class="form-control form-control-sm input_ss" size="13"/>
+				<input type="text" v-model="client.numSS" :placeholder="$t('client.numss-input')" :id="numSSInput" class="form-control form-control-sm input_ss" size="13"/>
 			</div>
 			<div class="col">
-				<input v-model="client.cleSS" v-bind:placeholder="$t('client.keyss-input')" type="number" id="cleSSInput" class="form-control form-control-sm input_key" min="0" max="99" value="00" size="2"/>
+				<input type="number" v-model="client.cleSS" :placeholder="$t('client.keyss-input')" :id="cleSSInput" class="form-control form-control-sm input_key" min="0" max="99" value="00" size="2"/>
 			</div>
 		</span>
 		<span class="row">
 			<label for="lastNameInput">{{$t('client.name-input')}}</label>
-			<input v-model="client.lastName" type="text" id="lastNameInput" class="form-control form-control-sm" v-bind:placeholder="$t('client.name-input')"/>
+			<!-- <input type="text" v-model="client.lastName" :placeholder="$t('client.name-input')" :id="lastNameInput" class="form-control form-control-sm" /> -->
 		</span>
 		<span class="row">
 			<label for="firstNameInput">{{$t('client.firstname-input')}}</label>
-			<input v-model="client.firstName" type="text" id="firstNameInput" class="form-control form-control-sm" v-bind:placeholder="$t('client.firstname-input')"/>
+			<!-- <input type="text" v-model="client.firstName" :placeholder="$t('client.firstname-input')" :id="firstNameInput" class="form-control form-control-sm"/> -->
 		</span>
 		<span class="row">
 			<label for="birthDateInput">{{$t('client.birthdate-input')}}</label>
-			<input v-model="client.birthDate" type="date" id="birthDateInput" class="form-control form-control-sm" v-bind:placeholder="$t('client.birthdate-input')"/>
+			<!-- <input type="date" v-model="client.birthDate" :placeholder="$t('client.birthdate-input')" :id="birthDateInput" class="form-control form-control-sm"/> -->
 		</span>
 		<span class="row">
 			<label for="birthDateInput">{{$t('client.address-input')}}</label>
-			<input v-model="client.address" type="text" id="addressInput" class="form-control form-control-sm" v-bind:placeholder="$t('client.address-input')"/>
+			<!-- <input type="text" v-model="client.address" :placeholder="$t('client.address-input')" :id="addressInput" class="form-control form-control-sm"/> -->
 		</span>
 		<span class="row">
 			<label for="birthDateInput">{{$t('client.address2-input')}}</label>
-			<input v-model="client.address2" type="text" id="address2Input" class="form-control form-control-sm" v-bind:placeholder="$t('client.address2-input')"/>
+			<!-- <input type="text" v-model="client.address2" :placeholder="$t('client.address2-input')" :id="address2Input" class="form-control form-control-sm"/> -->
 		</span>
 		<span class="row">
 			<label for="birthDateInput">{{$t('client.zipcode-input')}}</label>
-			<input v-model="client.zipcode" type="text" id="zipcodeInput" class="form-control form-control-sm" v-bind:placeholder="$t('client.zipcode-input')"/>
+			<!-- <input type="text" v-model="client.zipcode" :placeholder="$t('client.zipcode-input')" :id="zipcodeInput" class="form-control form-control-sm"/> -->
 		</span>
 		<span class="row">
 			<label for="birthDateInput">{{$t('client.city-input')}}</label>
-			<input v-model="client.city" type="text" id="cityInput" class="form-control form-control-sm" v-bind:placeholder="$t('client.city-input')"/>
+			<!-- <input type="text" v-model="client.city" :placeholder="$t('client.city-input')" :id="cityInput" class="form-control form-control-sm"/> -->
 		</span>
 		<span class="row">
 			<label for="birthDateInput">{{$t('client.cellphone-input')}}</label>
-			<input v-model="client.cellphone" type="tel" pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" id="cellphoneInput" class="form-control form-control-sm" v-bind:placeholder="$t('client.cellphone-input')"/>
+			<!-- <input type="tel" v-model="client.cellphone" :placeholder="$t('client.cellphone-input')" :id="cellphoneInput" pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" class="form-control form-control-sm" /> -->
 		</span>
 		<span class="row">
 			<label for="birthDateInput">{{$t('client.center-input')}}</label>
-			<input v-model="client.center" type="text" id="centerInput" class="form-control form-control-sm" v-bind:placeholder="$t('client.center-input')"/>
+			<!-- <input type="text" v-model="client.center" :placeholder="$t('client.center-input')" :id="centerInput" class="form-control form-control-sm"/> -->
 		</span>
 		<span class="row">
 			<label for="birthDateInput">{{$t('client.viewAt-input')}}</label>
-			<input readonly v-model="client.viewAt" type="text" id="viewAtInput" class="form-control form-control-sm form-control-plaintext" v-bind:placeholder="$t('client.viewAt-input')"/>
+			<!-- <input readonly type="text" v-model="client.viewAt" :placeholder="$t('client.viewAt-input')" :id="viewAtInput" class="form-control form-control-sm form-control-plaintext"/> -->
 		</span>
 		<span class="row">
 			<button v-if="this.client.isEdit == false" type="submit" class="btn btn-success btn-block btn-sm mt-3" >{{$t('buttons.save-button')}}</button>
 			<button v-else v-on:click="updateClient()" type="button" class="btn btn-primary btn-block btn-sm mt-3" >{{$t('buttons.update-button')}}</button>
 		</span>
 	</form>
-	<div>
-		<div id="alertError" class="alert alert-danger" role="alert" >{{$t('client.messages.creation-success')}}</div>
-		<div id="alertSuccess" class="alert alert-success" role="alert">{{$t('client.messages.creation-error')}}</div>
-	</div>
+	<!-- <div> -->
+		<!-- <div id="alertError" class="alert alert-danger" role="alert" >{{$t('client.messages.creation-success')}}</div> -->
+		<!-- <div id="alertSuccess" class="alert alert-success" role="alert">{{$t('client.messages.creation-error')}}</div> -->
+	<!-- </div> -->
 </div>
 </template>
 
@@ -73,9 +73,7 @@
 </style>
 
 <script>
-// import routes from './_store'
-const routes = require('./_store')
-const axios = require('axios')
+import axios from 'axios'
 
 export default {
 	name: 'client',
