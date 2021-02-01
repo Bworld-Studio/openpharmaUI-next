@@ -41,15 +41,17 @@ export default {
 		}
 	},
 	mounted () {
-		console.log('Component: Clients')
-		console.log(this.$router)
+		// console.log('Component: Clients')
+		// console.log(this.$router)
 		this.getClients()
 	},
 	methods: {
 		getClients () {
 			// Call API
+			debugger
 			axios.get('/api/clients').then(
 				result => {
+					debugger
 					// console.log(result.data)
 					this.clients = result.data
 				},

@@ -6,7 +6,6 @@ let routes = []
 const loadRoutes = function () {
 	let routes = []
 	let components = import.meta.globEager('./components/**/_routes.js')
-	debugger
 
 	for ( const component in components ) {
 
