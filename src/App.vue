@@ -52,12 +52,29 @@
 
 <script>
 // import axios from 'axios' // eslint-disable-line no-unused-vars
+import { ApiCommon } from './common/api.common'
+import { ref, onMounted } from 'vue'
+
 export default {
 	name: 'App',
+	setup(props) {
+		console.log(props)
+		const serverStatus = false
+
+		const getServerStatus = async () => {
+			repositories = await ApiCommon(props.user)
+		}
+
+		onMounted(getServerStatus)
+		
+		return {
+			serverStatus,
+			getServerStatus
+		}	
+	},
 	data () {
 		return {
-			serverStatus: false,
-			showModal: false
+			serverStatus: false
 		}
 	},
 	mounted () {

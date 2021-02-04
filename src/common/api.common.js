@@ -1,21 +1,27 @@
-// const Vue = require ('vue')
-// const axios = require('axios')
+import { ref } from "vue"
+import axios from 'axios'
 
-// const ApiCommon = {
-// 	checkServerStatus () {
-// 		var serverStatus = false
-// 		axios.get('/api/status').then(
-// 			result => {
-// 				if (result.status === 200) serverStatus = true
-// 				return serverStatus
-// 			},
-// 			error => {
-// 				console.error(error)
-// 				serverStatus = false
-// 				return serverStatus
-// 			}
-// 		)
-// 	}
-// }
+export default function getStatus() {
+	let post = ref({});
 
-// export default ApiCommon
+	function fetchPosts() {
+		fetch(`https://jsonplaceholder.typicode.com/posts`)
+			.then(response => response.json())
+			.then(data => (posts.value = data));
+	}
+
+	function fetchPost(postId) {
+		fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+			.then(response => response.json())
+			.then(data => (post.value = data))
+			.then(data => fetchUser(data.userId));
+	}
+
+	function fetchUser(userId) {
+		fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+			.then(response => response.json())
+			.then(data => (user.value = data))
+	}
+
+	return { fetchPosts, fetchPost, fetchUser, post, posts, user }
+}
