@@ -1,7 +1,7 @@
 <template>
 <!-- Commentaire HTML -->
-<div class="container">
-	<div class="title">{{$t('orders.title')}}</div>
+<div class="container-fluid">
+	<h2 class="title">{{$t('orders.title')}}</h2>
 	<!-- <div class="title">{{$t(viewLabel)}}</div> -->
 	<div v-bind="variable"></div>
 </div>
@@ -9,7 +9,7 @@
 
 <style>
 
-	.title{ color: #cacaca }
+	/* .title{ color: #cacaca } */
 
 </style>
 <script>

@@ -1,6 +1,6 @@
 <template>
 <div class="container-fluid">
-	<div>Home</div>
+	<h2>Home</h2>
 	<!-- <div class="cards">
 		<div class="card" v-for="(view) in views" :key="view.id" style="width: 25rem;">
 			<div class="card-body">

@@ -2,7 +2,7 @@
 	<div id="products-list" class="container">
 		<div>
 			<div class="">
-				<h2 class="text-center">Product List</h2>
+				<h2 class="title">{{$t('products.title')}}</h2>
 				<!-- <table class="table">
 					<tr v-for="(line) in clients" v-bind:key="line.uuid" v-bind:title="line.numSS">
 						<td class="text-left">{{line.lastName}}</td>

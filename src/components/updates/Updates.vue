@@ -1,15 +1,16 @@
 <template>
-	<div id="updates" class="container">
-			<button class="btn btn-info" v-on:click="updateBDPM('cis')">Update CIS</button>
-			<button class="btn btn-info" v-on:click="updateBDPM('cip')">Update CIP</button>
-			<button class="btn btn-info" v-on:click="updateBDPM('compo')">Update Compo</button>
-			<button class="btn btn-info" v-on:click="updateBDPM('gener')">Update Gener</button>
-			<button class="btn btn-info" v-on:click="updateBDPM('cpd')">Update CPD</button>
+	<div id="updates" class="container-fluid">
+		<h2>{{ $t('updates.title') }}</h2>
+		<div class="update-button"><button class="btn btn-info" v-on:click="updateBDPM('cis')">{{ $t('updates.cis-button')}}</button></div>
+		<div class="update-button"><button class="btn btn-info" v-on:click="updateBDPM('cip')">{{ $t('updates.cip-button')}}</button></div>
+		<div class="update-button"><button class="btn btn-info" v-on:click="updateBDPM('compo')">{{ $t('updates.compo-button')}}</button></div>
+		<div class="update-button"><button class="btn btn-info" v-on:click="updateBDPM('gener')">{{ $t('updates.gener-button')}}</button></div>
+		<div class="update-button"><button class="btn btn-info" v-on:click="updateBDPM('cpd')">{{ $t('updates.cpd-button')}}</button></div>
 	</div>
 </template>
 
 <style>
-
+	.update-button { margin: 5px 10px }
 </style>
 
 <script>

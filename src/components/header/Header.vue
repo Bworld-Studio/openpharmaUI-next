@@ -1,20 +1,28 @@
 <template>
-	<h2>Résultats</h2>
+<!-- Commentaire HTML -->
+<div class="container">
+	<div class="title">{{$t('global.openPharma')}}</div>
+	<div class="title">{{$t(viewLabel)}}</div>
+	<div v-bind="variable"></div>
+</div>
 </template>
 
+<style>
+
+	.title{ color: #cacaca }
+
+</style>
 <script>
+// import axios from 'axios'
 
 export default {
-	name: 'Search',		// Nom du composant
+	name: 'Template',		// Nom du composant
 	data () {
 		return {
 			// Déclarations des variables de la vue utilisable dans les scripts et le DOM
 			viewLabel: 'global.openPharma',
 			variable: ''
 		}
-	},
-	props: {
-		uuid: ''
 	},
 	mounted () {
 		// Code executé à l'appel de la vue
@@ -30,7 +38,3 @@ export default {
 	}
 }
 </script>
-
-<style>
-
-</style>

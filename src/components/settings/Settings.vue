@@ -1,6 +1,6 @@
 <template>
 	<div id="products-list" class="container">
-		<div>Settings</div>
+		<h2 class="title">{{$t('settings.title')}}</h2>
 		<!-- <div>
 			<div class="">
 				<h1 class="text-center">Settings</h1>

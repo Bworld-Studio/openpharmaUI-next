@@ -4,29 +4,29 @@
 		<ul class="nav navbar-nav flex-column">
 			<a class="navbar-brand" href="/" style="font-family:'Ubuntu-Medium'">
 				<img src="./assets/logo.png" style="margin-right: 8px; width:41px">
-				<!-- <span>{{ $t('global.openPharma') }}</span> -->
-				<span>openpharma</span>
-				<span class="version">WebUI-next 0.2.1</span>
+				<span>{{ $t('global.openpharma') }}</span>
+				<!-- <span>openpharma</span> -->
+				<span class="version">{{ $t('global.version') }}</span>
 			</a>
 			<li class="nav-item">
-				<!-- <a class="nav-link" href="/Clients">{{ $t('clients.menu') }}</a> -->
-				<a class="nav-link" href="/clients">Patients</a>
+				<a class="nav-link" href="/Clients">{{ $t('clients.menu') }}</a>
+				<!-- <a class="nav-link" href="/clients">Patients</a> -->
 			</li>
 			<li class="nav-item">
-				<!-- <a class="nav-link" href="/Products">{{ $t('products.menu') }}</a> -->
-				<a class="nav-link" href="/Products">Produits</a>
+				<a class="nav-link" href="/Products">{{ $t('products.menu') }}</a>
+				<!-- <a class="nav-link" href="/Products">Produits</a> -->
 			</li>
 			<li class="nav-item">
-				<!-- <a class="nav-link" href="/Orders">{{ $t('orders.menu') }}</a> -->
-				<a class="nav-link" href="/orders">Commandes</a>
+				<a class="nav-link" href="/Orders">{{ $t('orders.menu') }}</a>
+				<!-- <a class="nav-link" href="/orders">Commandes</a> -->
 			</li>
 			<li class="nav-item">
-				<!-- <a class="nav-link" href="/Updates">{{ $t('updates.menu')}}</a> -->
-				<a class="nav-link" href="/updates">Mises à jours</a>
+				<a class="nav-link" href="/Updates">{{ $t('updates.menu')}}</a>
+				<!-- <a class="nav-link" href="/updates">Mises à jours</a> -->
 			</li>
 			<li class="nav-item">
-				<!-- <a class="nav-link" href="/Settings">{{ $t('settings.menu') }}</a> -->
-				<a class="nav-link" href="/settings">Paramètres</a>
+				<a class="nav-link" href="/Settings">{{ $t('settings.menu') }}</a>
+				<!-- <a class="nav-link" href="/settings">Paramètres</a> -->
 			</li>
 		</ul>
 	</nav>
@@ -51,56 +51,61 @@
 </template>
 
 <script>
-// import axios from 'axios' // eslint-disable-line no-unused-vars
-import { ApiCommon } from './common/api.common'
+// impor taxios from 'axios' // eslint-disable-line no-unused-vars
+import commonFunctions from './common/api.common.js'
 import { ref, onMounted } from 'vue'
 
 export default {
-	name: 'App',
-	setup(props) {
-		console.log(props)
+	// name: 'App',
+	// components: { RepositoriesFilters, RepositoriesSortBy, RepositoriesList },
+	setup() {
+
+		// Navigation Logic
+
+		// Back end status flag
 		const serverStatus = false
+		const { getStatus } = commonFunctions()
+		// debugger
+		// const getServerStatus = async () => {
+		// 	serverStatus = await commonFunctions()
+		// }
 
-		const getServerStatus = async () => {
-			repositories = await ApiCommon(props.user)
-		}
+		onMounted(() => getStatus())
 
-		onMounted(getServerStatus)
-		
 		return {
-			serverStatus,
-			getServerStatus
-		}	
-	},
-	data () {
-		return {
-			serverStatus: false
-		}
-	},
-	mounted () {
-		console.log('App monted')
-		this.getServerStatus()
-	},
-	methods: {
-		search () {
-			this.showModal = true
-		},
-		getServerStatus () {
-		// 	const me = this
-		// 	setInterval(function () {
-		// 		var serverStatus = null
-		// 		axios.get('/api/status').then(
-		// 			result => {
-		// 				console.log(serverStatus)
-		// 				if (result.status === 200) me.serverStatus = true
-		// 			},
-		// 			error => {
-		// 				console.error(error)
-		// 				me.serverStatus = false
-		// 			}
-		// 		)
-		// 	}, 1000)
+			serverStatus
+			// getServerStatus
 		}
 	}
+	// data () {
+	// 	return {
+	// 		serverStatus: false
+	// 	}
+	// },
+	// mounted () {
+	// 	console.log('App monted')
+	// 	this.getServerStatus()
+	// },
+	// methods: {
+	// 	search () {
+	// 		this.showModal = true
+	// 	},
+	// 	getServerStatus () {
+	// 	// 	const me = this
+	// 	// 	setInterval(function () {
+	// 	// 		var serverStatus = null
+	// 	// 		axios.get('/api/status').then(
+	// 	// 			result => {
+	// 	// 				console.log(serverStatus)
+	// 	// 				if (result.status === 200) me.serverStatus = true
+	// 	// 			},
+	// 	// 			error => {
+	// 	// 				console.error(error)
+	// 	// 				me.serverStatus = false
+	// 	// 			}
+	// 	// 		)
+	// 	// 	}, 1000)
+	// 	}
+	// }
 }
 </script>

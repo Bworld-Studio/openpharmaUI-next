@@ -1,7 +1,7 @@
 <template>
 	<div id="clients-list" class="container-fluid">
 		<div class="">
-			<h1 class="text-center">{{ $t('clients.title') }}</h1>
+			<h2>{{ $t('clients.title') }}</h2>
 			<button class="btn btn-primary btn-sm" v-on:click="createClient()">{{ $t('clients.action2') }}</button>
 			<table class="table">
 				<tr v-for="(line) in clients" v-bind:key="line.uuid" v-bind:title="line.numSS">
