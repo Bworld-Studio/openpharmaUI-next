@@ -1,64 +1,63 @@
 <template>
-<div class="container-fluid">
-	<form v-on:submit.prevent="addClient">
-		<span class="row">
-			<label for="numSSInput">{{$t('client.numss-input')}}</label>
-			<div class="col">
-				<input type="text" v-model="client.numSS" :placeholder="$t('client.numss-input')" :id="numSSInput" class="form-control form-control-sm input_ss" size="13"/>
-			</div>
-			<div class="col">
-				<input type="number" v-model="client.cleSS" :placeholder="$t('client.keyss-input')" :id="cleSSInput" class="form-control form-control-sm input_key" min="0" max="99" value="00" size="2"/>
-			</div>
-		</span>
-		<span class="row">
-			<label for="lastNameInput">{{$t('client.name-input')}}</label>
-			<!-- <input type="text" v-model="client.lastName" :placeholder="$t('client.name-input')" :id="lastNameInput" class="form-control form-control-sm" /> -->
-		</span>
-		<span class="row">
-			<label for="firstNameInput">{{$t('client.firstname-input')}}</label>
-			<!-- <input type="text" v-model="client.firstName" :placeholder="$t('client.firstname-input')" :id="firstNameInput" class="form-control form-control-sm"/> -->
-		</span>
-		<span class="row">
-			<label for="birthDateInput">{{$t('client.birthdate-input')}}</label>
-			<!-- <input type="date" v-model="client.birthDate" :placeholder="$t('client.birthdate-input')" :id="birthDateInput" class="form-control form-control-sm"/> -->
-		</span>
-		<span class="row">
-			<label for="birthDateInput">{{$t('client.address-input')}}</label>
-			<!-- <input type="text" v-model="client.address" :placeholder="$t('client.address-input')" :id="addressInput" class="form-control form-control-sm"/> -->
-		</span>
-		<span class="row">
-			<label for="birthDateInput">{{$t('client.address2-input')}}</label>
-			<!-- <input type="text" v-model="client.address2" :placeholder="$t('client.address2-input')" :id="address2Input" class="form-control form-control-sm"/> -->
-		</span>
-		<span class="row">
-			<label for="birthDateInput">{{$t('client.zipcode-input')}}</label>
-			<!-- <input type="text" v-model="client.zipcode" :placeholder="$t('client.zipcode-input')" :id="zipcodeInput" class="form-control form-control-sm"/> -->
-		</span>
-		<span class="row">
-			<label for="birthDateInput">{{$t('client.city-input')}}</label>
-			<!-- <input type="text" v-model="client.city" :placeholder="$t('client.city-input')" :id="cityInput" class="form-control form-control-sm"/> -->
-		</span>
-		<span class="row">
-			<label for="birthDateInput">{{$t('client.cellphone-input')}}</label>
-			<!-- <input type="tel" v-model="client.cellphone" :placeholder="$t('client.cellphone-input')" :id="cellphoneInput" pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" class="form-control form-control-sm" /> -->
-		</span>
-		<span class="row">
-			<label for="birthDateInput">{{$t('client.center-input')}}</label>
-			<!-- <input type="text" v-model="client.center" :placeholder="$t('client.center-input')" :id="centerInput" class="form-control form-control-sm"/> -->
-		</span>
-		<span class="row">
-			<label for="birthDateInput">{{$t('client.viewAt-input')}}</label>
-			<!-- <input readonly type="text" v-model="client.viewAt" :placeholder="$t('client.viewAt-input')" :id="viewAtInput" class="form-control form-control-sm form-control-plaintext"/> -->
-		</span>
-		<span class="row">
-			<button v-if="this.client.isEdit == false" type="submit" class="btn btn-success btn-block btn-sm mt-3" >{{$t('buttons.save-button')}}</button>
-			<button v-else v-on:click="updateClient()" type="button" class="btn btn-primary btn-block btn-sm mt-3" >{{$t('buttons.update-button')}}</button>
-		</span>
-	</form>
-	<!-- <div> -->
-		<!-- <div id="alertError" class="alert alert-danger" role="alert" >{{$t('client.messages.creation-success')}}</div> -->
-		<!-- <div id="alertSuccess" class="alert alert-success" role="alert">{{$t('client.messages.creation-error')}}</div> -->
-	<!-- </div> -->
+<div>
+	<Header />
+	<div class="container-fluid">
+		<form v-on:submit.prevent="addClient">
+			<span class="row">
+				<label for="numSSInput">{{ t('client.numss-input') }}</label>
+				<div class="col">
+					<input type="text" v-model="client.numSS" :placeholder="t('client.numss-input')" id="numSSInput" class="form-control form-control-sm input_ss" size="13" />
+				</div>
+				<div class="col">
+					<input type="number" v-model="client.cleSS" :placeholder="t('client.keyss-input')" id="cleSSInput" class="form-control form-control-sm input_key" min="0" max="99" size="2" />
+				</div>
+			</span>
+			<span class="row">
+				<label for="lastNameInput">{{ t('client.name-input') }}</label>
+				<input type="text" v-model="client.lastName" :placeholder=" t('client.name-input')" :id="lastNameInput" class="form-control form-control-sm" />
+			</span>
+			<span class="row">
+				<label for="firstNameInput">{{ t('client.firstname-input') }}</label>
+				<input type="text" v-model="client.firstName" :placeholder=" t('client.firstname-input')" :id="firstNameInput" class="form-control form-control-sm"/>
+			</span>
+			<span class="row">
+				<label for="birthDateInput">{{ t('client.birthdate-input') }}</label>
+				<input type="date" v-model="client.birthDate" :placeholder=" t('client.birthdate-input')" :id="birthDateInput" class="form-control form-control-sm"/>
+			</span>
+			<span class="row">
+				<label for="birthDateInput">{{ t('client.address-input') }}</label>
+				<input type="text" v-model="client.address" :placeholder=" t('client.address-input')" :id="addressInput" class="form-control form-control-sm"/>
+			</span>
+			<span class="row">
+				<label for="birthDateInput">{{ t('client.address2-input') }}</label>
+				<input type="text" v-model="client.address2" :placeholder=" t('client.address2-input')" :id="address2Input" class="form-control form-control-sm"/>
+			</span>
+			<span class="row">
+				<label for="birthDateInput">{{ t('client.zipcode-input') }}</label>
+				<input type="text" v-model="client.zipcode" :placeholder=" t('client.zipcode-input')" :id="zipcodeInput" class="form-control form-control-sm"/>
+			</span>
+			<span class="row">
+				<label for="birthDateInput">{{ t('client.city-input') }}</label>
+				<input type="text" v-model="client.city" :placeholder=" t('client.city-input')" :id="cityInput" class="form-control form-control-sm"/>
+			</span>
+			<span class="row">
+				<label for="birthDateInput">{{ t('client.cellphone-input') }}</label>
+				<input type="tel" v-model="client.cellphone" :placeholder=" t('client.cellphone-input')" :id="cellphoneInput" pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" class="form-control form-control-sm" />
+			</span>
+			<span class="row">
+				<label for="birthDateInput">{{ t('client.center-input') }}</label>
+				<input type="text" v-model="client.center" :placeholder=" t('client.center-input')" :id="centerInput" class="form-control form-control-sm"/>
+			</span>
+			<span class="row">
+				<label for="birthDateInput">{{ t('client.viewAt-input') }}</label>
+				<input readonly type="text" v-model="client.viewAt" :placeholder=" t('client.viewAt-input')" :id="viewAtInput" class="form-control form-control-sm form-control-plaintext"/>
+			</span>
+			<span>
+				<button v-if="client.isEdit == false" type="submit" class="btn btn-success btn-sm" >{{ t('buttons.save-button') }}</button> <!-- mt-3 -->
+				<button v-else v-on:click="updateClient()" type="button" class="btn btn-primary btn-sm mt-3" >{{ t('buttons.update-button') }}</button>
+			</span>
+		</form>
+	</div>
 </div>
 </template>
 
@@ -73,95 +72,101 @@
 </style>
 
 <script>
+// Utilities
+import { ref, reactive, onMounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n' // I18n
 import axios from 'axios'
 
-export default {
-	name: 'client',
-	data () {
-		return {
-			// uuid: '',
-			client: {
-				uuid: undefined,
-				numSS: '',
-				cleSS: '',
-				lastName: '',
-				firstName: '',
-				birthDate: '',
-				address: '',
-				address2: '',
-				city: '',
-				zipcode: '',
-				cellphone: '',
-				phone: '',
-				center: '',
-				viewAt: '',
-				active: false,
-				isEdit: false
-			}
-		}
-	},
-	props: {
-		uuid: ''
-	},
-	mounted() {
-		console.log('Component: Client')
-		console.log(this.$route)
-		if (this.$route.params.uuid !== undefined) {
-			this.uuid = this.$route.params.uuid
-			this.getClient(this.uuid)
-		} else {
+// Views
+import Header from '../header/Header.vue'
 
-		}
-	},
-	methods: {
-		getClient(uuid) {
-			routes.getClient()
-			var url = '/api/clients/' + uuid
+// API
+
+export default {
+	components: { Header },
+	props: { uuid: undefined },
+	setup(props, context) {
+		const { t } = useI18n({ useScope: 'global' }) // Labels
+		
+		const api = '/api/clients/' // Déclaration
+
+		const client = ref({
+			uuid: undefined,
+			numSS: '',
+			cleSS: '',
+			lastName: '',
+			firstName: '',
+			birthDate: '',
+			address: '',
+			address2: '',
+			city: '',
+			zipcode: '',
+			cellphone: '',
+			phone: '',
+			center: '',
+			viewAt: '',
+			active: false,
+			isEdit: false
+		})
+
+		onMounted( () => {
+			if ( props.uuid !== undefined && props.uuid !== '' ) {
+				client.value.uuid = props.uuid
+				getClient(client.value.uuid)
+			}
+		})
+
+		const getClient = (uuid) => {
+			var url = api + uuid
 
 			axios.get(url)		// Call API GET
 				.then(result => {
-					this.mapClient(result.data)
+					mapClient(result.data)
 				}, error => { console.error(error) })
-		},
-		mapClient(client) {
-			this.client = client
-			this.client['viewAt'] = new Date()
-		},
-		addClient() {
-			this.client.active = true
-			this.client['viewAt'] = new Date()
+		}
 
-			axios.post('api/clients', this.client)
+		const mapClient = (client) => {
+			client.value = client
+			client.value['viewAt'] = new Date()
+		}
+		const addClient = () => {
+			client.value.active = true
+			client.value['viewAt'] = new Date()
+
+			axios.post('api/clients', client.value)
 				.then(res => {
 					$('#alertSuccess').alert()	// eslint-disable-line no-undef
-					this.client = {}
-					this.client.isEdit = false
-					this.getClient(this.client.uuid)
+					client.value = {}
+					client.value.isEdit = false
+					this.getClient(client.value.uuid)
 				}).catch(err => {
 					console.log(err)
 					$('#alertError').alert()	// eslint-disable-line no-undef
 				})
-		},
-		updateClient() {
-			axios.put(`/api/clients/${this.client.uuid}`, this.client)
+		}
+		const updateClient = () => {
+			axios.put(`/api/clients/${client.value.uuid}`, client.value)
 				.then(res => {
 					$('#alertSuccess').alert()	// eslint-disable-line no-undef
-					this.client = {}
-					this.client.isEdit = false
-					this.getClient(this.client.uuid)
+					client.value = {}
+					client.value.isEdit = false
+					this.getClient(client.value.uuid)
 					console.log(res)
 				}).catch(err => {
 					console.log(err)
 					$('#alertError').alert()	// eslint-disable-line no-undef
 				})
-		},
-		deleteClient(uuid) {
+		}
+		const deleteClient = (uuid) => {
 			axios.delete(`/api/clients/${uuid}`)
 				.then(res => {
-					this.client = {}
+					client.value = {}
 					console.log(res)
 				}).catch(err => { console.log(err) })
 		}
+
+		
+		return { client, addClient, updateClient, deleteClient, t }
 	}
 }
 </script>

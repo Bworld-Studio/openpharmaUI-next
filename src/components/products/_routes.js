@@ -1,6 +1,6 @@
 export default [
 	{
-		path: '/products',
+		path: '/Products',
 		name: 'products',
 		component: {}
 	}

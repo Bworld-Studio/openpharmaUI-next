@@ -3,10 +3,7 @@
 		"locale": "Français",
 		"lang": "fr",
 		"openpharma": "openpharma",
-		"version": "WebUI 0.2.1"
-	},
-	"home": {
-		"title": "Accueil"
+		"version": "WebUI 0.2.2"
 	},
 	"buttons": {
 		"yes-button": "Oui",
@@ -19,12 +16,30 @@
 		"delete-button": "Supprimer",
 		"search-button": "Rechercher"
 	},
+	"home": {
+		"menu": "Accueil",
+		"title": "Accueil",
+		"messages": {
+			"creation-success": "Patient créé avec succés",
+			"creation-error": "Erreur lors de la création du patient",
+			"update-success": "Patient mis à jour avec succés",
+			"update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
+		}
+	},
 	"clients": {
 		"menu": "Patients",
-		"title": "Liste des patients",
+		"title": "Patients",
 		"text": "Dans ce menu vous trouverez la base patients",
 		"action1": "Liste des patients",
-		"action2": "Nouveau patient"
+		"action2": "Ajouter un patient",
+		"messages": {
+			"creation-success": "Patient créé avec succés",
+			"creation-error": "Erreur lors de la création du patient",
+			"update-success": "Patient mis à jour avec succés",
+			"update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
+		}
 	},
 	"client": {
 		"numss-input": "Numéro de Sécurité Sociale",
@@ -50,33 +65,99 @@
 	},
 	"products": {
 		"menu": "Produits",
-		"title": "Liste des produits",
+		"title": "Produits",
 		"text": "Dans ce menu vous trouverez les différents produits disponibles",
 		"action1": "Liste des produits",
-		"action2": "Ajouter un produit"
+		"action2": "Ajouter un produit",
+		"table-header": {
+			"cis": "Code Spécialité",
+			"labelMed": "Libéllé Spécialité",
+			"pharmaForm": "Forme pharmacologique"
+		},
+		"messages": {
+			"creation-success": "Patient créé avec succés",
+			"creation-error": "Erreur lors de la création du patient",
+			"update-success": "Patient mis à jour avec succés",
+			"update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
+		}
 	},
 	"orders": {
 		"menu": "Commandes",
-		"title": "Liste des commandes",
+		"title": "Commandes",
 		"text": "Dans ce menu vous trouverez les commandes en cours ou passées",
 		"action1": "Liste des commandes",
-		"action2": "Créééééer une commande"
+		"action2": "Créer une commande",
+		"messages": {
+			"creation-success": "Patient créé avec succés",
+			"creation-error": "Erreur lors de la création du patient",
+			"update-success": "Patient mis à jour avec succés",
+			"update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
+		}
 	},
 	"search": {
 		"menu": "Recherche",
-		"placeholder-input": "Tapez pour chercher"
+		"placeholder-input": "Tapez pour chercher",
+		"title": "Recherche",
+		"results": "Résultats",
+		"messages": {
+			"creation-success": "Patient créé avec succés",
+			"creation-error": "Erreur lors de la création du patient",
+			"update-success": "Patient mis à jour avec succés",
+			"update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
+		}
 	},
 	"settings": {
 		"menu": "Paramètres",
-		"title": "Paramètres"
+		"title": "Paramètres",
+		"messages": {
+			"creation-success": "Patient créé avec succés",
+			"creation-error": "Erreur lors de la création du patient",
+			"update-success": "Patient mis à jour avec succés",
+			"update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
+		}
 	},
 	"updates": {
 		"menu": "Bases de données",
-		"title": "Mises à jour des bases de données",
-		"cis-button": "Mise à jour des spécialités",
-		"cip-button": "Mise à jour des présentations",
-		"compo-button": "Mise à jour des compositions",
-		"gener-button": "Mise à jour des groupes génériques",
-		"cpd-button": "Mise à jour des conditions de prescription et délivrances"
+		"title": "Bases de données",
+		"bdpm-button": "Mise à jour de la BDPM",
+		"__cis-button": "Mise à jour des spécialités",
+		"__cip-button": "Mise à jour des présentations",
+		"__compo-button": "Mise à jour des compositions",
+		"__gener-button": "Mise à jour des groupes génériques",
+		"__cpd-button": "Mise à jour des conditions de prescription et délivrances",
+		"messages": {
+			"last-update": "Dernière mise à jour le ",
+			"__creation-success": "Patient créé avec succés",
+			"__creation-error": "Erreur lors de la création du patient",
+			"__update-success": "Patient mis à jour avec succés",
+			"__update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
+		}
+	},
+	"showcase": {
+		"menu": "Showcase",
+		"title": "Showcase",
+		"messages": {
+			"creation-success": "Patient créé avec succés",
+			"creation-error": "Erreur lors de la création du patient",
+			"update-success": "Patient mis à jour avec succés",
+			"update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
+		}
+	},
+	"template": {
+		"menu": "Template",
+		"title": "Template",
+		"messages": {
+			"creation-success": "Patient créé avec succés",
+			"creation-error": "Erreur lors de la création du patient",
+			"update-success": "Patient mis à jour avec succés",
+			"update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
+		}
 	}
 }

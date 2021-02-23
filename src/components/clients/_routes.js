@@ -1,6 +1,6 @@
 export default [
 	{
-		path: '/Clients',
+		path: '/clients',
 		name: 'clients',
 		component: {}
 	}

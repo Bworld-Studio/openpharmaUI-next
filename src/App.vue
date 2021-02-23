@@ -1,111 +1,80 @@
 <template>
-<div id="app" class="">
-	<nav class="nav navbar-dark bg-dark">
-		<ul class="nav navbar-nav flex-column">
-			<a class="navbar-brand" href="/" style="font-family:'Ubuntu-Medium'">
-				<img src="./assets/logo.png" style="margin-right: 8px; width:41px">
-				<span>{{ $t('global.openpharma') }}</span>
-				<!-- <span>openpharma</span> -->
-				<span class="version">{{ $t('global.version') }}</span>
-			</a>
-			<li class="nav-item">
-				<a class="nav-link" href="/Clients">{{ $t('clients.menu') }}</a>
-				<!-- <a class="nav-link" href="/clients">Patients</a> -->
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/Products">{{ $t('products.menu') }}</a>
-				<!-- <a class="nav-link" href="/Products">Produits</a> -->
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/Orders">{{ $t('orders.menu') }}</a>
-				<!-- <a class="nav-link" href="/orders">Commandes</a> -->
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/Updates">{{ $t('updates.menu')}}</a>
-				<!-- <a class="nav-link" href="/updates">Mises à jours</a> -->
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/Settings">{{ $t('settings.menu') }}</a>
-				<!-- <a class="nav-link" href="/settings">Paramètres</a> -->
-			</li>
-		</ul>
-	</nav>
-	<div>
-		<nav class="nav navbar-nav bg-dark flex-row">
-			<div>
-				<!-- <input class="form-control" type="search" v-bind:placeholder="$t('search.placeholder-input')" aria-label="Search" aria-describedby="button-search"> -->
-				<input class="form-control" type="search" aria-label="Search" aria-describedby="button-search">
-				<div class="input-group-append">
-					<button class="btn btn-success btn-sm my-2 my-sm-0 btn-outline-secondary" type="button" id="button-search" v-on:click="search()">
-						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search text-light" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-							<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-						</svg>
-					</button>
-				</div>
-			</div>
+<div id="app_body" class="app_body">
+	<aside>
+		<nav class="nav navbar-dark bg-dark">
+			<ul class="nav navbar-nav flex-column">
+				<a class="navbar-brand" href="/" style="font-family:'Ubuntu-Medium'">
+					<img src="./assets/logo.png" style="margin-right: 8px; width:41px">
+					<span>{{ t('global.openpharma') }}</span>
+					<span class="version">{{ t('global.version') }}</span>
+				</a>
+				<li class="nav-item">
+					<img src="./assets/images/pharmacy/009-Pharmacist.svg" style="margin-right: 8px; width: 41px">
+					<a class="nav-link" href="/Clients">{{ t('clients.menu') }}</a>
+				</li>
+				<li class="nav-item">
+					<img src="./assets/images/pharmacy/003-drugs.svg" style="margin-right: 8px; width: 41px">
+					<a class="nav-link" href="/Products">{{ t('products.menu') }}</a>
+				</li>
+				<li class="nav-item">
+					<img src="./assets/images/pharmacy/005-prescription.svg" style="margin-right: 8px; width: 41px">
+					<a class="nav-link" href="/Orders">{{ t('orders.menu') }}</a>
+				</li>
+				<li class="nav-item">
+					<img src="./assets/images/pharmacy/045-container.svg" style="margin-right: 8px; width: 41px">
+					<a class="nav-link" href="/Updates">{{ t('updates.menu')}}</a>
+				</li>
+				<li class="nav-item">
+					<img src="./assets/images/construction/005-plan.svg" style="margin-right: 8px; width: 41px">
+					<a class="nav-link" href="/Settings">{{ t('settings.menu') }}</a>
+				</li>
+				<li class="nav-item">
+					<img src="./assets/images/construction/039-traffic barrier.svg" style="margin-right: 8px; width: 41px">
+					<a class="nav-link" href="/Template">{{ t('template.menu') }}</a>
+				</li>
+				<li class="nav-item">
+					<img src="./assets/images/construction/021-spirit level.svg" style="margin-right: 8px; width: 41px">
+					<a class="nav-link" href="/Showcase">{{ t('showcase.menu') }}</a>
+				</li>
+			</ul>
 		</nav>
+	</aside>
+	<div class="main">
 		<router-view/>
 	</div>
 </div>
 </template>
 
+<style>
+	.app_body { display: flex; flex-direction: row; height: 100%; width: 100%; }
+	.nav { height: 100%; }
+	/* .nav > * { border-bottom: 1px solid #000; } */
+	.navbar-brand {
+		margin-bottom: 1em;
+	}
+	.nav-item {
+		display: flex;
+		flex-direction: row;
+		margin: 0.3em 1em;
+	}
+	.main { height: 100%; width: 100%; }
+</style>
+
 <script>
-// impor taxios from 'axios' // eslint-disable-line no-unused-vars
-import commonFunctions from './common/api.common.js'
-import { ref, onMounted } from 'vue'
+
+// Utilities
+import { useI18n } from 'vue-i18n' // I18n
+
+// Views
+import Header from './components/header/Header.vue'
+
+// API
 
 export default {
-	// name: 'App',
-	// components: { RepositoriesFilters, RepositoriesSortBy, RepositoriesList },
+	components: { Header, },
 	setup() {
-
-		// Navigation Logic
-
-		// Back end status flag
-		const serverStatus = false
-		const { getStatus } = commonFunctions()
-		// debugger
-		// const getServerStatus = async () => {
-		// 	serverStatus = await commonFunctions()
-		// }
-
-		onMounted(() => getStatus())
-
-		return {
-			serverStatus
-			// getServerStatus
-		}
+		const { t } = useI18n({ useScope: 'global' }) // Labels
+		return { t }
 	}
-	// data () {
-	// 	return {
-	// 		serverStatus: false
-	// 	}
-	// },
-	// mounted () {
-	// 	console.log('App monted')
-	// 	this.getServerStatus()
-	// },
-	// methods: {
-	// 	search () {
-	// 		this.showModal = true
-	// 	},
-	// 	getServerStatus () {
-	// 	// 	const me = this
-	// 	// 	setInterval(function () {
-	// 	// 		var serverStatus = null
-	// 	// 		axios.get('/api/status').then(
-	// 	// 			result => {
-	// 	// 				console.log(serverStatus)
-	// 	// 				if (result.status === 200) me.serverStatus = true
-	// 	// 			},
-	// 	// 			error => {
-	// 	// 				console.error(error)
-	// 	// 				me.serverStatus = false
-	// 	// 			}
-	// 	// 		)
-	// 	// 	}, 1000)
-	// 	}
-	// }
 }
 </script>

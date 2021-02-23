@@ -1,54 +1,55 @@
 <template>
 <!-- Commentaire HTML -->
-<div class="container-fluid">
-	<h2 class="title">{{$t('orders.title')}}</h2>
-	<!-- <div class="title">{{$t(viewLabel)}}</div> -->
-	<div v-bind="variable"></div>
+<div id="orders">
+	<Header v-bind="headerParams"/>
+	<div class="container-fluid">
+		<!-- <h2 class="title">{{ t('orders.title') }}</h2> -->
+	</div>
 </div>
+
 </template>
 
 <style>
 
-	/* .title{ color: #cacaca } */
-
 </style>
+
 <script>
-import axios from 'axios'
+// Utilities
+import { ref, reactive, onMounted, computed } from 'vue'	// Fonction Vue3-Composition API
+import { useI18n } from 'vue-i18n' 												// I18n
+import { useRouter, useRoute } from 'vue-router'					// Fonctions du Router de Vues
+import axios from 'axios'																	// Axios pour faire des appels au backend
+
+// Views
+import Header from '../header/Header.vue'									// Import de la vue Header
+
+// API
+
 
 export default {
-	name: 'Orders',		// Nom du composant
-	data () {
-		return {
-			header: [ 'orders.id', 'orders.provider', 'orders.date' ],
-			orders: [],
-			// Déclarations des variables de la vue utilisable dans les scripts et le DOM
-			viewLabel: 'global.openPharma',
-			variable: ''
-		}
-	},
-	mounted () {
-		// Code executé à l'appel de la vue
-		this.getData() // Appel de fonction
-	},
-	methods: {
-		// Fonctions déclarées dans le composants
-		getData () {
+	components: { Header }, // Déclaration d'un composants à Ajouter, ie. la barre de recherche
+	setup() {
+		const { t } = useI18n({ useScope: 'global' }) // Labels
+		const actions = [{ },]
+		const headerParams = { view: 'orders', title: t('orders.title'), actions: actions } // Header
+
+		const header = ref([ 'orders.id', 'orders.provider', 'orders.date' ])
+		const orders = ref([])
+
+		const getData = () => {
 			axios.get('/api/orders').then(
 				result => {
-					// console.log(result.data)
-					this.orders = result.data
+					orders.value = result.data
 				},
 				error => {
 					console.error(error)
 				}
 			)
 		}
-		// getTrucs () {
-		// 	var variableCopy = this.variable // Accès aux variables dans le code JS
-		// 	console.log('Template: Display stuff in the console')
-		// 	console.log(variableCopy)
-		// }
 
+		onMounted( () => getData() ) // Fonction qui permet d'executer une autre fonction à l'appel du composant Template
+
+		return { header, orders, headerParams, t }
 	}
 }
 </script>

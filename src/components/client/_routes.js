@@ -1,6 +1,6 @@
 export default [
 	{
-		path: '/Client',
+		path: '/client',
 		name: 'client',
 		component: {},
 		props: { uuid: '' }

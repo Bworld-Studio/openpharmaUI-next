@@ -1,2 +1,3 @@
 html { height: 100%; width: 100%; margin: 0px; padding: 0px; overflow: hidden; }
 body { height: 100%; width: 100%; margin: 0px; padding: 0px; overflow: hidden; font-size: 13px;/* font-weight: 400; */ }
+#app { display: flex; flex-direction: row; height: 100%; width: 100%; }

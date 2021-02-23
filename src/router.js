@@ -18,8 +18,8 @@ const loadRoutes = function () {
 		let route = components[component]
 
 		// Import _route.js and Vue component
-		const VueComp = () => import(path)
-		route.default[0].component = VueComp
+		const VueComp = () => import(path /* @vite-ignore */)
+		route.default[0].component = VueComp /* @vite-ignore */
 		routes.push(route.default[0])
 	}
 	return routes

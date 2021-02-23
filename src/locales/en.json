@@ -3,7 +3,8 @@
 		"locale": "English",
 		"lang": "en",
 		"openPharma": "OpenPharma",
-		"version": "WebUI 0.1.3"
+		"version": "WebUI 0.1.3",
+		"openpharma": "openpharma"
 	},
 	"home": {
 		"title": "Home"
@@ -16,12 +17,22 @@
 		"close-button": "Close",
 		"update-button": "Update",
 		"edit-button": "Edit",
-		"delete-button": "Delete"
+		"delete-button": "Delete",
+		"search-button": "Search"
 	},
 	"clients": {
 		"title": "Patients list",
 		"action1": "Patients List",
-		"action2": "New client"
+		"action2": "New client",
+		"menu": "Patients",
+		"text": "In this menu you will find the patient database",
+		"messages": {
+			"error": "Error",
+			"creation-error": "Error creating patient",
+			"creation-success": "Patient created successfully",
+			"update-error": "Error when updating patient",
+			"update-success": "Patient updated successfully"
+		}
 	},
 	"client": {
 		"numss-input": "SS Num",
@@ -38,12 +49,77 @@
 		"center-input": "SS Center",
 		"viewAt-input": "Last visit",
 		"messages": {
-			"error": "Error"
+			"error": "Error",
+			"creation-error": "Error creating patient",
+			"creation-success": "Patient created successfully",
+			"update-error": "Error when updating patient",
+			"update-success": "Patient updated successfully"
 		}
 	},
 	"products": {
 		"title": "Product",
 		"action1": "Products List",
-		"action2": "Add a product"
+		"action2": "Add a product",
+		"menu": "Products",
+		"text": "In this menu you will find the different products available",
+		"messages": {
+			"error": "Error",
+			"creation-error": "Error creating patient",
+			"creation-success": "Patient created successfully",
+			"update-error": "Error when updating patient",
+			"update-success": "Patient updated successfully"
+		}
+	},
+	"updates": {
+		"compo-button": "Update of compositions",
+		"cpd-button": "Update of prescription and dispensing conditions",
+		"gener-button": "Updating generic groups",
+		"menu": "Data base",
+		"cip-button": "Update presentations",
+		"cis-button": "Updating specialties",
+		"title": "Database updates",
+		"messages": {
+			"error": "Error",
+			"creation-error": "Error creating patient",
+			"creation-success": "Patient created successfully",
+			"update-error": "Error when updating patient",
+			"update-success": "Patient updated successfully"
+		}
+	},
+	"orders": {
+		"action1": "List of commands",
+		"action2": "Create an order",
+		"menu": "Orders",
+		"text": "In this menu you will find current or past orders",
+		"title": "List of commands",
+		"messages": {
+			"error": "Error",
+			"creation-error": "Error creating patient",
+			"creation-success": "Patient created successfully",
+			"update-error": "Error when updating patient",
+			"update-success": "Patient updated successfully"
+		}
+	},
+	"search": {
+		"menu": "Research",
+		"placeholder-input": "Type to search",
+		"messages": {
+			"error": "Error",
+			"creation-error": "Error creating patient",
+			"creation-success": "Patient created successfully",
+			"update-error": "Error when updating patient",
+			"update-success": "Patient updated successfully"
+		}
+	},
+	"settings": {
+		"menu": "Settings",
+		"title": "Settings",
+		"messages": {
+			"error": "Error",
+			"creation-error": "Error creating patient",
+			"creation-success": "Patient created successfully",
+			"update-error": "Error when updating patient",
+			"update-success": "Patient updated successfully"
+		}
 	}
 }
