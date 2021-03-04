@@ -1,7 +1,7 @@
 <template>
 <div id="home">
 	<Header />
-	<div class="home__main container-fluid">
+	<div class="home__main container__main container-fluid">
 		<h2>{{ t('home.title') }}</h2>
 		<div class="card__container">
 			<div class="card" v-for="(view) in views" :key="view.id" style="width: 25rem;">

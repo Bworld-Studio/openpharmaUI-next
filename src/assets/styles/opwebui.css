@@ -21,9 +21,21 @@
 .bg-dark {
 	background-color: var(--main-color2) !important;
 }
+.btn-primary {
+	color: #fff !important;
+	background-color: #0d6efd !important;
+	border-color: #0d6efd !important;
+}
+.btn-success {
+	color: #fff !important;
+	background-color: #198754 !important;
+	border-color: #198754 !important;
+}
 
 .version {
 	padding-left: .2rem;
 	font-size: .8rem;
 	color: grey;
 }
+
+.container__main { margin-top: 0.5rem; height: calc(100% - 51px) }

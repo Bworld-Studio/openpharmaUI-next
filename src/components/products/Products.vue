@@ -1,9 +1,9 @@
 <template>
-<div id="products">
+<div id="products" style="height: 100%;">
 	<Header v-bind="headerParams"/>
 
-		<div class="container-fluid">
-			<button class="btn btn-info" v-on:click="getProducts()">{{ t('products.action1') }}</button>
+		<div class="container__main container-fluid">
+			<button class="btn btn-info btn-sm" v-on:click="getProducts()">{{ t('products.action1') }}</button>
 			<div class="table-responsive">
 				<table class="table">
 					<thead>
@@ -28,7 +28,7 @@
 </template>
 
 <style>
-.table__body { height: 250px; }
+	.table__body { height: 250px; }
 </style>
 
 <script>

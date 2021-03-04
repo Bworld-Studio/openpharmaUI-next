@@ -2,7 +2,7 @@
 <!-- Commentaire HTML -->
 <div id="template">
 	<Header v-bind="headerParams"/>
-	<div class="container-fluid">
+	<div class="container__main container-fluid">
 		<!-- <h2 class="title">{{ t('template.title') }}</h2> -->
 		<div>{{ t(varLabel) }}</div>
 		<!-- <div v-bind="variable"></div> -->

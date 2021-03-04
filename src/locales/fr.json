@@ -101,6 +101,7 @@
 		"placeholder-input": "Tapez pour chercher",
 		"title": "Recherche",
 		"results": "Résultats",
+		"action": "Rechercher",
 		"messages": {
 			"creation-success": "Patient créé avec succés",
 			"creation-error": "Erreur lors de la création du patient",

@@ -1,7 +1,7 @@
 <template>
 <div id="template">
 	<Header v-bind="headerParams"/>
-	<div class="container-fluid">
+	<div class="container__main container-fluid">
 		<div>{{ t(varLabel) }}</div>
 		<!-- <div v-bind="variable"></div> -->
 		<div>{{varStr}}</div>

@@ -1,7 +1,7 @@
 <template>
 <div>
-	<Header />
-	<div class="container-fluid">
+	<Header v-bind="headerParams"/>
+	<div class="container__main container-fluid">
 		<form v-on:submit.prevent="addClient">
 			<span class="row">
 				<label for="numSSInput">{{ t('client.numss-input') }}</label>
@@ -84,11 +84,14 @@ import Header from '../header/Header.vue'
 
 export default {
 	components: { Header },
-	props: { uuid: undefined },
+	props: { uuid: String, mode: String },
 	setup(props, context) {
 		const { t } = useI18n({ useScope: 'global' }) // Labels
 		
 		const api = '/api/clients/' // Déclaration
+
+		// const uuid = props.uuid
+		// const mode = props.mode
 
 		const client = ref({
 			uuid: undefined,
@@ -112,30 +115,30 @@ export default {
 		onMounted( () => {
 			if ( props.uuid !== undefined && props.uuid !== '' ) {
 				client.value.uuid = props.uuid
-				getClient(client.value.uuid)
+				getClient(props.uuid)
 			}
 		})
 
-		const getClient = (uuid) => {
-			var url = api + uuid
-
+		const getClient = (_uuid) => {
+			let url = api + _uuid
+			console.log(url)
 			axios.get(url)		// Call API GET
 				.then(result => {
+					debugger
 					mapClient(result.data)
 				}, error => { console.error(error) })
 		}
 
-		const mapClient = (client) => {
-			client.value = client
-			client.value['viewAt'] = new Date()
+		const mapClient = (_client) => {
+			client.value = _client
+			// client.value['viewAt'] = new Date()
 		}
 		const addClient = () => {
 			client.value.active = true
-			client.value['viewAt'] = new Date()
+			// client.value['viewAt'] = new Date()
 
 			axios.post('api/clients', client.value)
 				.then(res => {
-					$('#alertSuccess').alert()	// eslint-disable-line no-undef
 					client.value = {}
 					client.value.isEdit = false
 					this.getClient(client.value.uuid)
@@ -147,7 +150,6 @@ export default {
 		const updateClient = () => {
 			axios.put(`/api/clients/${client.value.uuid}`, client.value)
 				.then(res => {
-					$('#alertSuccess').alert()	// eslint-disable-line no-undef
 					client.value = {}
 					client.value.isEdit = false
 					this.getClient(client.value.uuid)
@@ -157,8 +159,8 @@ export default {
 					$('#alertError').alert()	// eslint-disable-line no-undef
 				})
 		}
-		const deleteClient = (uuid) => {
-			axios.delete(`/api/clients/${uuid}`)
+		const deleteClient = (_uuid) => {
+			axios.delete(`/api/clients/${_uuid}`)
 				.then(res => {
 					client.value = {}
 					console.log(res)

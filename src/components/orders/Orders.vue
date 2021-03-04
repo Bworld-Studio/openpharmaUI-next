@@ -2,7 +2,7 @@
 <!-- Commentaire HTML -->
 <div id="orders">
 	<Header v-bind="headerParams"/>
-	<div class="container-fluid">
+	<div class="container__main container-fluid">
 		<!-- <h2 class="title">{{ t('orders.title') }}</h2> -->
 	</div>
 </div>

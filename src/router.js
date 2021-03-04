@@ -6,6 +6,8 @@ let routes = []
 const loadRoutes = function () {
 	let routes = []
 	let components = import.meta.globEager('./components/**/_routes.js')
+	// let components = import.meta.globEager('./components/**/**.vue')
+	// debugger
 
 	for ( const component in components ) {
 

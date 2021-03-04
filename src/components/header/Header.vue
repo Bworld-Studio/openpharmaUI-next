@@ -1,28 +1,44 @@
 <template>
-	<nav id="header" class="nav bg-dark"> <!-- Commentaire HTML -->
+	<nav id="header" class="nav bg-dark header--height"> <!-- Commentaire HTML -->
 		<div class="header__nav">
 			<div class="header__title">
 				<h3>{{title}}</h3>
 			</div>
 			<div class="header__search">
-				<input class="form-control form-control-sm" type="search" v-bind:placeholder="t('search.placeholder-input')" aria-label="Search" aria-describedby="button-search">
-				<div class="input-group-append">
+				<div class="input-group">
+					<input type="text" class="form-control" v-bind:placeholder="t('search.placeholder-input')" aria-label="Text input with segmented dropdown button">
+					<button type="button" class="btn btn-success btn-outline-secondary">
+						<!-- <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search text-light" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+							<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+						</svg> -->
+						<span>{{ t('search.action')}}</span>
+					</button>
+					<button type="button" class="btn btn-success btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+						<span class="visually-hidden">Toggle Dropdown</span>	
+					</button>
+					<ul class="dropdown dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#">Action</a></li>
+						<li><a class="dropdown-item" href="#">Another action</a></li>
+						<li><a class="dropdown-item" href="#">Something else here</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="#">Separated link</a></li>
+					</ul>
+				</div>
+				<!-- <input class="form-control form-control-sm" type="search" v-bind:placeholder="t('search.placeholder-input')" aria-label="Search" aria-describedby="button-search"> -->
+				<!-- <div class="input-group-append">
 					<button class="btn btn-success my-2 my-sm-0 btn-outline-secondary" type="button" id="button-search" v-on:click="search()">
 						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search text-light" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
 							<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
 						</svg>
 					</button>
-				</div>
+				</div> -->
 			</div>
 			<div class="header__actions">
-				<div v-if="view == 'template'">
-					<span>{{'TEmplate Actions'}}</span>
+				<div v-for="(action) in actions" :key="action.label">
+					<button class="btn btn-success my-2 my-sm-0 btn-outline-secondary" type="button" id="button-search" v-on:click="action.fnc()"></button>
 				</div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
 			</div>
 			<div class="header__status" v-on:click="getStatus()">
 				<div v-if="status">
@@ -45,7 +61,7 @@
 </template>
 
 <style>
-
+	.header--height { height: 51px !important; }
 	.header__nav { display: flex; flex-direction: row; width: 100%; padding: 5px 10px; justify-content: space-between; }
 	.header__title { color: #fff; width: 25%; }
 	.header__search { width: 50%; display: flex; }
@@ -56,7 +72,7 @@
 
 <script>
 // Utilities
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, inject } from 'vue'
 import { useI18n } from 'vue-i18n' // I18n
 
 // Views
@@ -65,22 +81,21 @@ import { useI18n } from 'vue-i18n' // I18n
 import commonAPI from '../../common/api.common.js'
 
 export default {
-	props: { view: '', title: '', actions: [] }, 
+	props: { view: String, title: String, actions: [] },
 	setup(props) {
 		const { t } = useI18n({ useScope: 'global' }) // Labels
+		// debugger
 		const title = props.title		// View Title
 		const view = props.view			// Calling View
+		const actions = props.actions
 
 		const { getStatus, status } = commonAPI()
 
 		onMounted(() => getStatus())
 
-		const search = function() {
-			
-		}
+		const search = inject('search')
 
-		
-		return { getStatus, status, view, title, t }
+		return { getStatus, status, view, search, actions, title, t }
 	}
 }
 </script>

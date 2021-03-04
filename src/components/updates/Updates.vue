@@ -1,7 +1,7 @@
 <template>
 <div id="updates">
 	<Header v-bind="headerParams"/>
-	<div class="container-fluid">
+	<div class="container__main container-fluid">
 		<!-- <h2>{{ t('updates.title') }}</h2> -->
 		<div>
 			<button class="btn btn-info update-button" v-on:click="updateBDPM('cis')">{{ t('updates.bdpm-button')}}</button>
