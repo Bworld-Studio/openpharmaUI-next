@@ -2,7 +2,6 @@
 	<div id="clients">
 		<Header v-bind="headerParams"/>
 		<main class="container__main container-fluid">
-			<!-- <h2>{{ t('clients.title') }}</h2> -->
 			<button class="btn btn-primary btn-sm" v-on:click="createClient()">{{ t('clients.action2') }}</button>
 			<table class="table"> <!-- class="table" -->
 				<tr v-for="(line) in clients" v-bind:key="line.uuid" v-bind:title="line.numSS">
