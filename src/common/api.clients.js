@@ -1,20 +1,21 @@
 import axios from 'axios'
-import { ref } from "vue"
+import { ref } from 'vue'
 
-export default function clientFunctions() {
-	let status = ref(false)
+export default function useClients() {
+	const api = '/api/clients' // Déclaration
+	let clients = ref([])
 
-	function getStatus() {
+	const getClients = () => {
 		// debugger
-		axios.get('/api/status')
-			.then( result => {
-				// debugger
-				if (result.status === 200) status.value = true
+		axios.get('/api/clients').then(
+			result => {
+				debugger
+				clients.value = result.data
 			},
 			error => {
-				status.value = false
+				console.error(error)
 			}
 		)
 	}
-	return { getStatus, status }
+	return { clients, getClients }
 }

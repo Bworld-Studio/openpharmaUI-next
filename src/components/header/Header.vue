@@ -36,8 +36,9 @@
 				</div> -->
 			</div>
 			<div class="header__actions">
-				<div v-for="(action) in actions" :key="action.label">
-					<button class="btn btn-success my-2 my-sm-0 btn-outline-secondary" type="button" id="button-search" v-on:click="action.fnc()"></button>
+				<div class="header__actions--buttons">
+					<button class="btn btn-primary me-3 btn-outline-secondary" type="button" id="button-action0" v-if="action0 !== undefined" v-on:click="action0()">{{actions[0].label}}</button>
+					<button class="btn btn-primary me-3 btn-outline-secondary" type="button" id="button-action1" v-if="action1 !== undefined" v-on:click="action1()">{{actions[1].label}}</button>
 				</div>
 			</div>
 			<div class="header__status" v-on:click="getStatus()">
@@ -66,6 +67,7 @@
 	.header__title { color: #fff; width: 25%; }
 	.header__search { width: 50%; display: flex; }
 	.header__actions { color: #fff }
+	/* .header__actions--buttons { } */
 	.header__status { display: flex; align-items: center; }
 	
 </style>
@@ -78,24 +80,26 @@ import { useI18n } from 'vue-i18n' // I18n
 // Views
 
 // API
-import commonAPI from '../../common/api.common.js'
+import useCommon from '../../common/api.common.js'
 
 export default {
 	props: { view: String, title: String, actions: [] },
 	setup(props) {
 		const { t } = useI18n({ useScope: 'global' }) // Labels
-		// debugger
+
 		const title = props.title		// View Title
 		const view = props.view			// Calling View
 		const actions = props.actions
 
-		const { getStatus, status } = commonAPI()
+		const { getStatus, status } = useCommon()
 
 		onMounted(() => getStatus())
 
 		const search = inject('search')
+		const action0 = inject('action0')
+		const action1 = inject('action1')
 
-		return { getStatus, status, view, search, actions, title, t }
+		return { getStatus, status, view, search, actions, action0, action1, title, t }
 	}
 }
 </script>

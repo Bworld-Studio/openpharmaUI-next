@@ -31,8 +31,8 @@
 		"menu": "Patients",
 		"title": "Patients",
 		"text": "Dans ce menu vous trouverez la base patients",
-		"action1": "Liste des patients",
-		"action2": "Ajouter un patient",
+		"action0": "Liste des patients",
+		"action1": "Ajouter un patient",
 		"messages": {
 			"creation-success": "Patient créé avec succés",
 			"creation-error": "Erreur lors de la création du patient",
@@ -67,8 +67,8 @@
 		"menu": "Produits",
 		"title": "Produits",
 		"text": "Dans ce menu vous trouverez les différents produits disponibles",
-		"action1": "Liste des produits",
-		"action2": "Ajouter un produit",
+		"action0": "Liste des produits",
+		"action1": "Ajouter un produit",
 		"table-header": {
 			"cis": "Code Spécialité",
 			"labelMed": "Libéllé Spécialité",
@@ -86,8 +86,8 @@
 		"menu": "Commandes",
 		"title": "Commandes",
 		"text": "Dans ce menu vous trouverez les commandes en cours ou passées",
-		"action1": "Liste des commandes",
-		"action2": "Créer une commande",
+		"action0": "Liste des commandes",
+		"action1": "Créer une commande",
 		"messages": {
 			"creation-success": "Patient créé avec succés",
 			"creation-error": "Erreur lors de la création du patient",
@@ -113,6 +113,17 @@
 	"settings": {
 		"menu": "Paramètres",
 		"title": "Paramètres",
+		"messages": {
+			"creation-success": "Patient créé avec succés",
+			"creation-error": "Erreur lors de la création du patient",
+			"update-success": "Patient mis à jour avec succés",
+			"update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
+		}
+	},
+	"about": {
+		"menu": "À propos",
+		"title": "À propos",
 		"messages": {
 			"creation-success": "Patient créé avec succés",
 			"creation-error": "Erreur lors de la création du patient",

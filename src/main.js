@@ -2,11 +2,11 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { createI18n } from 'vue-i18n'
-import { Popover  } from 'bootstrap'
 
+// CSS
+import { Popover } from 'bootstrap'
 import './assets/styles/op.css'
 import './assets/styles/opwebui.css'
-// import ''
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 // Internationalisation -- i18n

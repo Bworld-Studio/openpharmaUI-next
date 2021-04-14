@@ -1,3 +1,8 @@
+## 0.2.3
+  - ✅ Bump to 0.2.3
+  - 🔁 Update all dependencies to latest
+  - 👕 Automatisation of routing with props in components
+
 ## 0.2.2
   - ✅ Bump to 0.2.2
   - 🚧 Vertical Menu

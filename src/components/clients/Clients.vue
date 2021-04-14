@@ -2,12 +2,12 @@
 	<div id="clients">
 		<Header v-bind="headerParams"/>
 		<main class="container__main container-fluid">
-			<button class="btn btn-primary btn-sm" v-on:click="createClient()">{{ t('clients.action2') }}</button>
+			<!-- <button class="btn btn-primary btn-sm" v-on:click="createClient()">{{ t('clients.action1') }}</button> -->
 			<table class="table"> <!-- class="table" -->
 				<tr v-for="(line) in clients" v-bind:key="line.uuid" v-bind:title="line.numSS">
 					<td scope="col" class="text-left">{{line.lastName}}</td>
 					<td scope="col" class="text-left">{{line.firstName}}</td>
-					<td scope="col" class="text-left">{{ d(new Date(line.birthDate), "short") }}</td>
+					<!-- <td scope="col" class="text-left">{{ d(new Date(line.birthDate), "short") }}</td> -->
 					<td scope="col" class=""> <!-- text-right -->
 						<button type="button" class="btn btn-primary btn-sm" v-on:click="displayClient(line)">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
@@ -47,29 +47,16 @@ import Header from '../header/Header.vue'
 import Client from '../client/Client.vue'
 
 // API
+import useClients from '../../common/api.clients.js'
 
 export default {
 	components: { Header },
 	setup(props, context) {
 		const { t, d } = useI18n({ useScope: 'global' }) // Labels
-		// const actions = []
-		// const headerParams = { view: 'clients', title: t('clients.title'), actions: [search] } // Header
-
-		const clients = ref([])
+		const { clients, getClients } = useClients()
 
 		// API Calls
-		const getClients = () => {
-			// debugger
-			axios.get('/api/clients').then(
-				result => {
-					// debugger
-					clients.value = result.data
-				},
-				error => {
-					console.error(error)
-				}
-			)
-		}
+
 
 		const search = () => {
 			debugger
@@ -89,10 +76,12 @@ export default {
 			router.push({ name: 'client', params: { uuid: client.uuid, mode: 'D' } })
 		}
 
-		const actions = [{label: t('clients.action2'), fnc: 'createClient' }]
+		const actions = [{ label: t('clients.action0') }, { label: t('clients.action1') } ]
 		const headerParams = { view: 'clients', title: t('clients.title'), actions: actions, searchFnc: search } // Header
-
+		provide('action0', getClients)
+		provide('action1', createClient)
 		provide('search', search)
+
 		return { clients, createClient, editClient, displayClient, search, headerParams, t, d }
 	}
 }

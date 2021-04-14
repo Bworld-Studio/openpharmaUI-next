@@ -10,19 +10,19 @@
 				</a>
 				<li class="nav-item">
 					<img src="./assets/images/pharmacy/009-Pharmacist.svg" style="margin-right: 8px; width: 41px">
-					<a class="nav-link" href="/Clients">{{ t('clients.menu') }}</a>
+					<a class="nav-link" href="/clients">{{ t('clients.menu') }}</a>
 				</li>
 				<li class="nav-item">
 					<img src="./assets/images/pharmacy/003-drugs.svg" style="margin-right: 8px; width: 41px">
-					<a class="nav-link" href="/Products">{{ t('products.menu') }}</a>
+					<a class="nav-link" href="/products">{{ t('products.menu') }}</a>
 				</li>
 				<li class="nav-item">
 					<img src="./assets/images/pharmacy/005-prescription.svg" style="margin-right: 8px; width: 41px">
-					<a class="nav-link" href="/Orders">{{ t('orders.menu') }}</a>
+					<a class="nav-link" href="/orders">{{ t('orders.menu') }}</a>
 				</li>
 				<li class="nav-item">
 					<img src="./assets/images/pharmacy/045-container.svg" style="margin-right: 8px; width: 41px">
-					<a class="nav-link" href="/Updates">{{ t('updates.menu')}}</a>
+					<a class="nav-link" href="/updates">{{ t('updates.menu')}}</a>
 				</li>
 				<li class="nav-item">
 					<img src="./assets/images/construction/005-plan.svg" style="margin-right: 8px; width: 41px">
@@ -36,6 +36,10 @@
 					<img src="./assets/images/construction/021-spirit level.svg" style="margin-right: 8px; width: 41px">
 					<a class="nav-link" href="/Showcase">{{ t('showcase.menu') }}</a>
 				</li>
+				<!-- <li class="nav-item">
+					<img src="./assets/images/ecology/035-light bulb.svg" style="margin-right: 8px; width: 41px">
+					<a class="nav-link" href="/About">{{ t('about.menu') }}</a>
+				</li> -->
 			</ul>
 		</nav>
 	</aside>

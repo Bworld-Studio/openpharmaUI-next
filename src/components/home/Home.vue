@@ -8,8 +8,8 @@
 				<div class="card-body">
 					<h5 class="card-title">{{ t(view.title) }}</h5>
 					<p class="card-text">{{ t(view.text) }}</p>
+					<a v-bind:href="view.path0" class="card-link">{{ t(view.action0) }}</a>
 					<a v-bind:href="view.path1" class="card-link">{{ t(view.action1) }}</a>
-					<a v-bind:href="view.path2" class="card-link">{{ t(view.action2) }}</a>
 				</div>
 			</div>
 		</div>
@@ -40,9 +40,9 @@ export default {
 	setup() {
 
 		const views = ref([
-			{ id: 'Clients', title: 'clients.title', text: 'clients.text', action1: 'clients.action1', path1: '/Clients', action2: 'clients.action2', path2: '/Client' },
-			{ id: 'Products', title: 'products.title', text: 'products.text', action1: 'products.action1', path1: '/Products', action2: 'products.action2', path2: '/Products' },
-			{ id: 'Orders', title: 'orders.title', text: 'orders.text', action1: 'orders.action1', path1: '/Orders', action2: 'orders.action2', path2: '/Orders' }
+			{ id: 'Clients', title: 'clients.title', text: 'clients.text', action0: 'clients.action0', path1: '/Clients', action1: 'clients.action1', path2: '/Client' },
+			{ id: 'Products', title: 'products.title', text: 'products.text', action0: 'products.action0', path1: '/Products', action1: 'products.action1', path2: '/Products' },
+			{ id: 'Orders', title: 'orders.title', text: 'orders.text', action0: 'orders.action0', path1: '/Orders', action1: 'orders.action1', path2: '/Orders' }
 		])
 
 		const { t } = useI18n({ useScope: 'global' }) // Labels
