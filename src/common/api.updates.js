@@ -1,20 +1,27 @@
-import axios from 'axios'
+import Axios from 'axios'
 import { ref } from 'vue'
 
 export default function useUpdates() {
-	let status = ref(false)
+	// Déclaration
+	const url = '/api/updates'
+	let clients = ref([])
 
-	// function getStatus() {
-	// 	// debugger
-	// 	axios.get('/api/status')
-	// 		.then( result => {
-	// 			// debugger
-	// 			if (result.status === 200) status.value = true
-	// 		},
-	// 		error => {
-	// 			status.value = false
-	// 		}
-	// 	)
-	// }
-	return { }
+	const update = (file) => {
+		// debugger
+		// BDPM
+		let api = url + '/' + file
+		Axios.get(api).then(
+			result => {
+				debugger
+				clients.value = result.data
+			},
+			error => {
+				console.error(error)
+			}
+		)
+	}
+	const readUpdateDate = (file) => {
+		
+	}
+	return { update, readUpdateDate }
 }

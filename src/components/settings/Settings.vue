@@ -20,7 +20,7 @@
 
 <script>
 
-// import axios from 'axios'
+// import Axios from 'axios'
 export default {
 	name: 'Settings',
 	data () {

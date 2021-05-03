@@ -1,28 +1,28 @@
 {
 	"name": "openpharmaWebUI-next",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"description": "openpharma WebUI",
 	"author": "GrayFawkes <gray.fawkes@outlook.com>",
 	"scripts": {
 		"dev": "vite --config vite.dev.config.js --debug log.txt",
-		"build": "vite build"
+		"build": "vite build",
+		"npm-gui": "npx npm-gui"
 	},
 	"dependencies": {
-		"@bundled-es-modules/axios": "^0.21.1",
 		"axios": "^0.21.1",
-		"bootstrap": "^5.0.0-beta2",
-		"bootstrap-icons": "^1.4.0",
+		"bootstrap": "^5.0.0-beta3",
+		"bootstrap-icons": "^1.4.1",
 		"vue": "^3.0.11",
-		"vue-i18n": "^9.0.0",
-		"vue-router": "^4.0.5"
+		"vue-i18n": "^9.1.6",
+		"vue-router": "^4.0.6"
 	},
 	"devDependencies": {
-		"@intlify/vite-plugin-vue-i18n": "^2.0.0-rc.1",
+		"@intlify/vite-plugin-vue-i18n": "^2.1.2",
 		"@rollup/plugin-dynamic-import-vars": "^1.1.1",
-		"@vitejs/plugin-vue": "^1.1.4",
+		"@vitejs/plugin-vue": "^1.2.2",
 		"@vue/compiler-sfc": "^3.0.11",
-		"eslint": "^7.18.0",
-		"eslint-plugin-vue": "^7.4.1",
-		"vite": "^2.0.2"
+		"eslint": "^7.25.0",
+		"eslint-plugin-vue": "^7.9.0",
+		"vite": "^2.2.3"
 	}
 }

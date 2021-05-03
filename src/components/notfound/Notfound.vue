@@ -6,7 +6,7 @@
 import { ref, reactive, onMounted, computed } from 'vue'	// Fonction Vue3-Composition API
 import { useI18n } from 'vue-i18n' 												// I18n
 import { useRouter, useRoute } from 'vue-router'					// Fonctions du Router de Vues
-import axios from 'axios'																	// Axios pour faire des appels au backend
+import Axios from 'axios'																	// Axios pour faire des appels au backend
 
 // Views
 import Header from '../header/Header.vue'									// Import de la vue Header

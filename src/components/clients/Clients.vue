@@ -40,7 +40,7 @@
 import { ref, reactive, onMounted, computed, provide } from 'vue'
 import { useI18n } from 'vue-i18n' // I18n
 import { useRouter, useRoute } from 'vue-router'
-import axios from 'axios' // eslint-disable-line no-unused-vars
+import Axios from 'axios' // eslint-disable-line no-unused-vars
 
 // Views
 import Header from '../header/Header.vue'

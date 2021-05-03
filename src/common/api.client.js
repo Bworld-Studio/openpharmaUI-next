@@ -1,11 +1,11 @@
-import axios from 'axios'
+import Axios from 'axios'
 import { ref } from 'vue'
 
 export default function clientFunctions() {
 	let status = ref(false)
 
 	function getStatus() {
-		axios.get('/api/status')
+		Axios.get('/api/status')
 			.then( result => {
 				if (result.status === 200) status.value = true
 			},

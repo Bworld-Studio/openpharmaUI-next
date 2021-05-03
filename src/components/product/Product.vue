@@ -75,7 +75,7 @@
 // Utilities
 import { ref, reactive, onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n' // I18n
-import axios from 'axios'
+import Axios from 'axios'
 
 // Views
 import Header from '../header/Header.vue'
@@ -122,7 +122,7 @@ export default {
 		const getClient = (_uuid) => {
 			let url = api + _uuid
 			console.log(url)
-			axios.get(url)		// Call API GET
+			Axios.get(url)		// Call API GET
 				.then(result => {
 					debugger
 					mapClient(result.data)
@@ -137,7 +137,7 @@ export default {
 			client.value.active = true
 			// client.value['viewAt'] = new Date()
 
-			axios.post('api/clients', client.value)
+			Axios.post('api/clients', client.value)
 				.then(res => {
 					client.value = {}
 					client.value.isEdit = false
@@ -148,7 +148,7 @@ export default {
 				})
 		}
 		const updateClient = () => {
-			axios.put(`/api/clients/${client.value.uuid}`, client.value)
+			Axios.put(`/api/clients/${client.value.uuid}`, client.value)
 				.then(res => {
 					client.value = {}
 					client.value.isEdit = false
@@ -160,7 +160,7 @@ export default {
 				})
 		}
 		const deleteClient = (_uuid) => {
-			axios.delete(`/api/clients/${_uuid}`)
+			Axios.delete(`/api/clients/${_uuid}`)
 				.then(res => {
 					client.value = {}
 					console.log(res)
