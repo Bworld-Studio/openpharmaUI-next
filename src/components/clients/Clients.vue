@@ -7,7 +7,7 @@
 				<tr v-for="(line) in clients" v-bind:key="line.uuid" v-bind:title="line.numSS">
 					<td scope="col" class="text-left">{{line.lastName}}</td>
 					<td scope="col" class="text-left">{{line.firstName}}</td>
-					<!-- <td scope="col" class="text-left">{{ d(new Date(line.birthDate), "short") }}</td> -->
+					<td scope="col" class="text-left">{{ d(line.birthDate) }}</td>
 					<td scope="col" class=""> <!-- text-right -->
 						<button type="button" class="btn btn-primary btn-sm" v-on:click="displayClient(line)">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">

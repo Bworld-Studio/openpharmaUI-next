@@ -1,23 +1,25 @@
 import Axios from 'axios'
 import { ref } from 'vue'
+import commonFunctions from '../common/functions'
 
 export default function useClients() {
-
-	// Déclaration
-	const api = '/api/clients' 
+	const url = '/api/clients/' // API URL
+	const { get } = commonFunctions()
+		// Déclarations
 	let clients = ref([])
 
 	const getClients = () => {
-		// debugger
-		Axios.get(api).then(
+
+		Axios.get(url).then(
 			result => {
-				debugger
 				clients.value = result.data
 			},
 			error => {
 				console.error(error)
 			}
 		)
+
 	}
+	
 	return { clients, getClients }
 }

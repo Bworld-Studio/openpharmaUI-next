@@ -1,9 +1,9 @@
 {
 	"global": {
 		"locale": "Français",
-		"lang": "fr",
+		"lang": "fr-FR",
 		"openpharma": "openpharma",
-		"version": "WebUI 0.2.2"
+		"version": "WebUI 0.2.3"
 	},
 	"buttons": {
 		"yes-button": "Oui",

@@ -1,8 +1,7 @@
 {
 	"global": {
 		"locale": "English",
-		"lang": "en",
-		"openPharma": "OpenPharma",
+		"lang": "en-GB",
 		"version": "WebUI 0.1.3",
 		"openpharma": "openpharma"
 	},

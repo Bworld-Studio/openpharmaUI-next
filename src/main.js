@@ -10,13 +10,13 @@ import './assets/styles/opwebui.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 // Internationalisation -- i18n
-const loadLocaleMessages = function () {
-	let locales = import.meta.globEager('./locales/*.json')
+const loadLocaleMessages = () => {
+	let locales = import.meta.globEager('./locales/*-*.json')
 	let messages = {}
 
 	for (const path in locales) {
 		const matched = path.match(/([A-Za-z0-9-_]+)\./i)
-		if (matched && matched.length > 1) {
+		if (matched && matched.length > 1 ) {
 			const locale = matched[1]
 			messages[locale] = locales[path]
 		}
@@ -24,10 +24,16 @@ const loadLocaleMessages = function () {
 	return messages
 }
 
+const loadDateTimeFormats = () => {
+	let datetimeFormats = import.meta.globEager('./locales/datetimeFormats.json')
+	return datetimeFormats
+}
+
 const i18n = createI18n({
 	legacy: false,
-	locale: 'fr',
-	fallbackLocale: 'en',
+	locale: 'fr-FR',
+	fallbackLocale: 'en-GB',
+	datetimeFormats: loadDateTimeFormats(),
 	messages: loadLocaleMessages(),
 })
 

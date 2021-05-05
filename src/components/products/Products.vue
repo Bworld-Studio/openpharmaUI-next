@@ -1,34 +1,37 @@
 <template>
 <div id="products" style="height: 100%;">
 	<Header v-bind="headerParams"/>
-
-		<div class="container__main container-fluid">
-			<button class="btn btn-info btn-sm" v-on:click="getProducts()">{{ t('products.action1') }}</button>
-			<div class="table-responsive">
-				<table class="table">
-					<thead>
-						<tr>
-							<td>{{ t('products.table-header.cis') }}</td>
-							<td>{{ t('products.table-header.labelMed') }}</td>
-							<td>{{ t('products.table-header.pharmaForm') }}</td>
-						</tr>
-					</thead>
-					<tbody class="table__body overflow-scroll">
-						<tr v-for="(product) in products" :key="product.cis">
-							<td class="text-left">{{product.labelMed}}</td>
-							<td class="text-left">{{product.pharmaForm}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-
+	<div class="container__main">
+		<div class="container-fluid">
+			<button class="btn btn-info btn-sm" v-on:click="getProducts()">{{ t('products.action0') }}</button>
 		</div>
-
+		<div class="table-responsive">
+			<table class="table table__body">
+				<thead>
+					<tr>
+						<th>{{ t('products.table-header.cis') }}</th>
+						<th>{{ t('products.table-header.labelMed') }}</th>
+						<th>{{ t('products.table-header.pharmaForm') }}</th>
+					</tr>
+				</thead>
+				<tbody class="overflow-auto">
+					<tr v-for="(product) in products" :key="product.cis">
+						<th class="text-left">{{product.cis}}</th>
+						<td class="text-left">{{product.labelMed}}</td>
+						<td class="text-left">{{product.pharmaForm}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
 </template>
 
 <style>
-	.table__body { height: 250px; }
+	.table__body {
+		height: 750px;
+		display: block;
+	}
 </style>
 
 <script>
