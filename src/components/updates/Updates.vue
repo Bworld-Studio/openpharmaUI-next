@@ -24,7 +24,6 @@ import Axios from 'axios'																	// Axios pour faire des appels au back
 
 // Views
 import Header from '../header/Header.vue'									// Import de la vue Header
-import Product from '../product/Product.vue'							// Import de la vue Product
 
 // API
 import useUpdates from '../../common/api.updates.js'

@@ -18,7 +18,7 @@
 
 <script>
 // Utilities
-import { ref, reactive, onMounted, computed } from 'vue'	// Fonction Vue3-Composition API
+import { ref, reactive, onMounted, computed, provide } from 'vue'	// Fonction Vue3-Composition API
 import { useI18n } from 'vue-i18n' 												// I18n
 import { useRouter, useRoute } from 'vue-router'					// Fonctions du Router de Vues
 import Axios from 'axios'																	// Axios pour faire des appels au backend
@@ -33,8 +33,11 @@ export default {
 	components: { Header }, // Déclaration d'un composants à Ajouter, ie. la barre de recherche
 	props: { param: '' },		// Déclaration des paramètres d'entrée du composant
 	setup(props, context) {
-		const { t } = useI18n({ useScope: 'global' }) // Labels
+		const { t, d } = useI18n({ useScope: 'global' }) // Labels and Date
 		const headerParams = { view: 'template', title: t('template.title') } // Header
+
+		// Import Router for navigation
+		const router = useRouter() // Import Router
 
 		const varLabel = ref('global.version')					// Binding de Label i18n
 		let varStr = ref('Variable Simple binding')		// Variable de type alphanumérique
@@ -53,7 +56,8 @@ export default {
 
 		onMounted( () => getData() ) // Fonction qui permet d'executer une autre fonction à l'appel du composant Template
 
-		return { varStr, varLabel, headerParams, t }
+		provide('search', search)
+		return { varStr, varLabel, headerParams, search, t, d }
 	}
 }
 </script>
