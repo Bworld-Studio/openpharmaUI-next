@@ -3,7 +3,7 @@
 	<Header v-bind="headerParams"/>
 	<div class="container__main">
 		<div class="container-fluid">
-			<button class="btn btn-info btn-sm" v-on:click="getProducts()">{{ t('products.action0') }}</button>
+			<!-- <button class="btn btn-info btn-sm" v-on:click="getProducts()">{{ t('products.action0') }}</button> -->
 		</div>
 		<div class="table-responsive">
 			<table class="table table__body">
@@ -57,6 +57,7 @@ export default {
 		const { products, getProducts, searchProducts } = useProducts()		// Get products
 
 		const search = (term) => {
+			debugger
 			searchProducts(term)
 		}
 
@@ -67,6 +68,7 @@ export default {
 			router.push({ name: 'product', params: { cis: product.cis, mode: 'D' } })
 		}
 
+		// Header parameters
 		const actions = [{ label: t('products.action0') }, { label: t('products.action1') } ]
 		const headerParams = { view: 'clients', title: t('products.title'), actions: actions, searchFnc: search } // Header
 		provide('action0', getProducts)

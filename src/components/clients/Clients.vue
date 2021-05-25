@@ -44,7 +44,7 @@ import Axios from 'axios' // eslint-disable-line no-unused-vars
 
 // Views
 import Header from '../header/Header.vue'
-import Client from '../client/Client.vue'
+import Client from './Client.vue'
 
 // API
 import useClients from '../../common/api.clients.js'
@@ -53,13 +53,12 @@ export default {
 	components: { Header },
 	setup(props, context) {
 		const { t, d } = useI18n({ useScope: 'global' }) // Labels
-		const { clients, getClients } = useClients()
+		const { clients, getClients, searchClients } = useClients()
 
 		// API Calls
-
-
-		const search = () => {
+		const search = (term) => {
 			debugger
+			searchClients(term)
 		}
 
 		onMounted( () => getClients() )
@@ -67,7 +66,7 @@ export default {
 		// Navigation to Client.vue
 		const router = useRouter() // Import Router
 		const createClient = () => {
-			router.push({ name: 'client', params: { uuid: undefined } })
+			router.push({ name: 'client', params: { uuid: '' } })
 		}
 		const editClient = (client) => {
 			router.push({ name: 'client', params: { uuid: client.uuid, mode: 'E' } })
@@ -76,13 +75,13 @@ export default {
 			router.push({ name: 'client', params: { uuid: client.uuid, mode: 'D' } })
 		}
 
-		const actions = [{ label: t('clients.action0') }, { label: t('clients.action1') } ]
-		const headerParams = { view: 'clients', title: t('clients.title'), actions: actions, searchFnc: search } // Header
+		// const actions = [{ label: t('clients.action0') }, { label: t('clients.action1') } ]
+		const headerParams = { view: 'clients', title: t('clients.title'), actions: [{ label: t('clients.action0') }, { label: t('clients.action1') } ] } // Header
 		provide('action0', getClients)
 		provide('action1', createClient)
 		provide('search', search)
 
-		return { clients, createClient, editClient, displayClient, search, headerParams, t, d }
+		return { clients, createClient, editClient, displayClient, search, getClients, headerParams, t, d }
 	}
 }
 </script>

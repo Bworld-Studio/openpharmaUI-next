@@ -86,9 +86,11 @@ export default {
 	components: { Header },
 	props: { uuid: String, mode: String },
 	setup(props, context) {
-		const { t } = useI18n({ useScope: 'global' }) // Labels
+		const { t, d } = useI18n({ useScope: 'global' }) // Labels
 		
-		const api = '/api/clients/' // Déclaration
+		const api = '/api/clients' // Déclaration
+
+		debugger
 
 		// const uuid = props.uuid
 		// const mode = props.mode
@@ -113,6 +115,7 @@ export default {
 		})
 
 		onMounted( () => {
+			debugger
 			if ( props.uuid !== undefined && props.uuid !== '' ) {
 				client.value.uuid = props.uuid
 				getClient(props.uuid)
@@ -135,13 +138,14 @@ export default {
 		}
 		const addClient = () => {
 			client.value.active = true
-			// client.value['viewAt'] = new Date()
-
-			Axios.post('api/clients', client.value)
+			// client.value.viewAt = new Date()
+			// console.log(client._rawValue)
+			// debugger
+			Axios.post('api/clients', client._rawValue )
 				.then(res => {
 					client.value = {}
 					client.value.isEdit = false
-					this.getClient(client.value.uuid)
+					getClient(client.value.uuid)
 				}).catch(err => {
 					console.log(err)
 					$('#alertError').alert()	// eslint-disable-line no-undef

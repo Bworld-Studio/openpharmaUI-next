@@ -22,6 +22,10 @@
 				</li>
 				<li class="nav-item">
 					<img src="./assets/images/pharmacy/045-container.svg" style="margin-right: 8px; width: 41px">
+					<a class="nav-link" href="/statistics">{{ t('statistics.menu')}}</a>
+				</li>
+				<li class="nav-item">
+					<img src="./assets/images/pharmacy/045-container.svg" style="margin-right: 8px; width: 41px">
 					<a class="nav-link" href="/updates">{{ t('updates.menu')}}</a>
 				</li>
 				<li class="nav-item">

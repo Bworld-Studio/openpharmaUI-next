@@ -3,7 +3,6 @@
 <div id="showcase">
 	<Header v-bind="headerParams"/>
 	<div class="container__main container-fluid">
-		<!-- <h2 class="title">{{ t('showcase.title') }}</h2> -->
 		<div>{{ t(varLabel) }}</div>
 		<!-- <div v-bind="variable"></div> -->
 		<div>{{varStr}}</div>
@@ -37,11 +36,11 @@ export default {
 		const headerParams = { view: 'showcase', title: t('showcase.title') } // Header
 
 		const varLabel = ref('global.version')					// Binding de Label i18n
-		let varStr = ref('Variable Simple binding')		// Variable de type alphanumérique
-		let varNum = 0		// Variable de type nombre
-		let varObj = {}		// Variable de type objet
-		let varTab = []		// Variable de type Table
-		let varUnd = undefined	// Variable de type non défini
+		let varStr = ref('Variable Simple binding')			// Variable de type alphanumérique
+		let varNum = 0																	// Variable de type nombre
+		let varObj = {}																	// Variable de type objet
+		let varTab = []																	// Variable de type Table
+		let varUnd = undefined													// Variable de type non défini
 
 		const getData = () => {
 			let varTemp = 'Test binding' // Accès aux variables dans le code JS

@@ -1,124 +1,175 @@
 {
-	"global": {
-		"locale": "English",
-		"lang": "en-GB",
-		"version": "WebUI 0.1.3",
-		"openpharma": "openpharma"
-	},
-	"home": {
-		"title": "Home"
-	},
-	"buttons": {
-		"yes-button": "Yes",
-		"no-button": "No",
-		"save-button": "Save",
-		"cancel-button": "Cancel",
-		"close-button": "Close",
-		"update-button": "Update",
-		"edit-button": "Edit",
-		"delete-button": "Delete",
-		"search-button": "Search"
-	},
-	"clients": {
-		"title": "Patients list",
-		"action1": "Patients List",
-		"action2": "New client",
-		"menu": "Patients",
-		"text": "In this menu you will find the patient database",
-		"messages": {
-			"error": "Error",
-			"creation-error": "Error creating patient",
-			"creation-success": "Patient created successfully",
-			"update-error": "Error when updating patient",
-			"update-success": "Patient updated successfully"
-		}
-	},
-	"client": {
-		"numss-input": "SS Num",
-		"keyss-input": "Key",
-		"name-input": "Last name",
-		"firstname-input": "Fist Name",
-		"birthdate-input": "Date of birth",
-		"address-input": "healthCenter-input",
-		"address2-input": "Additional",
-		"zipcode-input": "Zip Code",
-		"city-input": "City",
-		"phone-input": "Phone number",
-		"cellphone-input": "Cell phone",
-		"center-input": "SS Center",
-		"viewAt-input": "Last visit",
-		"messages": {
-			"error": "Error",
-			"creation-error": "Error creating patient",
-			"creation-success": "Patient created successfully",
-			"update-error": "Error when updating patient",
-			"update-success": "Patient updated successfully"
-		}
-	},
-	"products": {
-		"title": "Product",
-		"action1": "Products List",
-		"action2": "Add a product",
-		"menu": "Products",
-		"text": "In this menu you will find the different products available",
-		"messages": {
-			"error": "Error",
-			"creation-error": "Error creating patient",
-			"creation-success": "Patient created successfully",
-			"update-error": "Error when updating patient",
-			"update-success": "Patient updated successfully"
-		}
-	},
-	"updates": {
-		"compo-button": "Update of compositions",
-		"cpd-button": "Update of prescription and dispensing conditions",
-		"gener-button": "Updating generic groups",
-		"menu": "Data base",
-		"cip-button": "Update presentations",
-		"cis-button": "Updating specialties",
-		"title": "Database updates",
-		"messages": {
-			"error": "Error",
-			"creation-error": "Error creating patient",
-			"creation-success": "Patient created successfully",
-			"update-error": "Error when updating patient",
-			"update-success": "Patient updated successfully"
-		}
-	},
-	"orders": {
-		"action1": "List of commands",
-		"action2": "Create an order",
-		"menu": "Orders",
-		"text": "In this menu you will find current or past orders",
-		"title": "List of commands",
-		"messages": {
-			"error": "Error",
-			"creation-error": "Error creating patient",
-			"creation-success": "Patient created successfully",
-			"update-error": "Error when updating patient",
-			"update-success": "Patient updated successfully"
-		}
-	},
-	"search": {
-		"menu": "Research",
-		"placeholder-input": "Type to search",
-		"messages": {
-			"error": "Error",
-			"creation-error": "Error creating patient",
-			"creation-success": "Patient created successfully",
-			"update-error": "Error when updating patient",
-			"update-success": "Patient updated successfully"
-		}
-	},
-	"settings": {
-		"menu": "Settings",
-		"title": "Settings",
-		"messages": {
-			"error": "Error",
-			"creation-error": "Error creating patient",
-			"creation-success": "Patient created successfully",
-			"update-error": "Error when updating patient",
-			"update-success": "Patient updated successfully"
-		}
-	}
+  "global": {
+    "locale": "Français",
+    "lang": "fr-FR",
+    "openpharma": "openpharma",
+    "version": "WebUI 0.2.3"
+  },
+  "buttons": {
+    "yes-button": "Yes",
+    "no-button": "No",
+    "save-button": "Save",
+    "cancel-button": "Cancel",
+    "close-button": "Close",
+    "update-button": "Update",
+    "edit-button": "Edit",
+    "delete-button": "Delete",
+    "search-button": "Search"
+  },
+  "home": {
+    "menu": "Home",
+    "title": "Home",
+    "messages": {
+      "creation-success": "Patient créé avec succés",
+      "creation-error": "Erreur lors de la création du patient",
+      "update-success": "Patient mis à jour avec succés",
+      "update-error": "Error lors de la mise à jour du patient",
+      "error": "Une erreur est survenue"
+    }
+  },
+  "clients": {
+    "menu": "Patients",
+    "title": "Patients",
+    "text": "Dans ce menu vous trouverez la base patients",
+    "action0": "List of patients",
+    "action1": "Add a patient",
+    "messages": {
+      "creation-success": "Patient créé avec succés",
+      "creation-error": "Error creating patient",
+      "update-success": "Patient mis à jour avec succés",
+      "update-error": "Error lors de la mise à jour du patient",
+      "error": "An error has occurred"
+    }
+  },
+  "client": {
+    "numss-input": "Social Security number",
+    "keyss-input": "Key",
+    "name-input": "Last name",
+    "firstname-input": "First name",
+    "birthdate-input": "Date of Birth",
+    "address-input": "Address",
+    "address2-input": "Additional address",
+    "city-input": "City",
+    "zipcode-input": "Postal code",
+    "cellphone-input": "Mobile number",
+    "phone-input": "Telephone number",
+    "center-input": "CPAM Center",
+    "viewAt-input": "last visit",
+    "messages": {
+      "creation-success": "Patient created successfully",
+      "creation-error": "Error creating patient",
+      "update-success": "Patient updated successfully",
+      "update-error": "Error when updating the patient",
+      "error": "An error has occurred"
+    }
+  },
+  "products": {
+    "menu": "Produits",
+    "title": "Produits",
+    "text": "Dans ce menu vous trouverez les différents produits disponibles",
+    "action0": "Liste des produits",
+    "action1": "Ajouter un produit",
+    "table-header": {
+      "cis": "Code Spécialité",
+      "labelMed": "Libéllé Spécialité",
+      "pharmaForm": "Forme pharmacologique"
+    },
+    "messages": {
+      "creation-success": "Patient créé avec succés",
+      "creation-error": "Erreur lors de la création du patient",
+      "update-success": "Patient mis à jour avec succés",
+      "update-error": "Error lors de la mise à jour du patient",
+      "error": "Une erreur est survenue"
+    }
+  },
+  "orders": {
+    "menu": "Commandes",
+    "title": "Commandes",
+    "text": "Dans ce menu vous trouverez les commandes en cours ou passées",
+    "action0": "Liste des commandes",
+    "action1": "Créer une commande",
+    "messages": {
+      "creation-success": "Patient créé avec succés",
+      "creation-error": "Erreur lors de la création du patient",
+      "update-success": "Patient mis à jour avec succés",
+      "update-error": "Error lors de la mise à jour du patient",
+      "error": "Une erreur est survenue"
+    }
+  },
+  "search": {
+    "menu": "Recherche",
+    "placeholder-input": "Tapez pour chercher",
+    "title": "Recherche",
+    "results": "Résultats",
+    "action": "Rechercher",
+    "messages": {
+      "creation-success": "Patient créé avec succés",
+      "creation-error": "Erreur lors de la création du patient",
+      "update-success": "Patient mis à jour avec succés",
+      "update-error": "Error lors de la mise à jour du patient",
+      "error": "Une erreur est survenue"
+    }
+  },
+  "settings": {
+    "menu": "Paramètres",
+    "title": "Paramètres",
+    "messages": {
+      "creation-success": "Patient créé avec succés",
+      "creation-error": "Erreur lors de la création du patient",
+      "update-success": "Patient mis à jour avec succés",
+      "update-error": "Error lors de la mise à jour du patient",
+      "error": "Une erreur est survenue"
+    }
+  },
+  "about": {
+    "menu": "About",
+    "title": "About",
+    "messages": {
+      "creation-success": "Patient created successfully",
+      "creation-error": "Error creating patient",
+      "update-success": "Patient updated successfully",
+      "update-error": "Error when updating the patient",
+      "error": "An error has occurred"
+    }
+  },
+  "updates": {
+    "menu": "Bases de données",
+    "title": "Bases de données",
+    "bdpm-button": "Mise à jour de la BDPM",
+    "__cis-button": "Mise à jour des spécialités",
+    "__cip-button": "Mise à jour des présentations",
+    "__compo-button": "Mise à jour des compositions",
+    "__gener-button": "Mise à jour des groupes génériques",
+    "__cpd-button": "Mise à jour des conditions de prescription et délivrances",
+    "messages": {
+      "last-update": "Dernière mise à jour le ",
+      "__creation-success": "Patient créé avec succés",
+      "__creation-error": "Erreur lors de la création du patient",
+      "__update-success": "Patient mis à jour avec succés",
+      "__update-error": "Error lors de la mise à jour du patient",
+      "error": "Une erreur est survenue"
+    }
+  },
+  "showcase": {
+    "menu": "Showcase",
+    "title": "Showcase",
+    "messages": {
+      "creation-success": "Patient créé avec succés",
+      "creation-error": "Erreur lors de la création du patient",
+      "update-success": "Patient mis à jour avec succés",
+      "update-error": "Error lors de la mise à jour du patient",
+      "error": "Une erreur est survenue"
+    }
+  },
+  "template": {
+    "menu": "Template",
+    "title": "Template",
+    "messages": {
+      "creation-success": "Patient créé avec succés",
+      "creation-error": "Erreur lors de la création du patient",
+      "update-success": "Patient mis à jour avec succés",
+      "update-error": "Error lors de la mise à jour du patient",
+      "error": "Une erreur est survenue"
+    }
+  }
 }

@@ -19,7 +19,7 @@ export default function useProducts() {
 	}
 
 	const searchProducts = function(term) {
-		let query = { search: term }
+
 		Axios.get(api, { params: { search: term } })
 			.then(result => {
 				if ( result.status == 200 ) products.value = result.data // Result.data avec contrôle sur le résultat de l'appel

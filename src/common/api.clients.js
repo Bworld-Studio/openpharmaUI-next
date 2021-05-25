@@ -3,18 +3,31 @@ import { ref } from 'vue'
 import commonFunctions from '../common/functions'
 
 export default function useClients() {
-	const url = '/api/clients/' // API URL
+	const api = '/api/clients' // API URL
 		// Déclarations
-	let clients = ref([])
+	const clients = ref([])
 
-	const getClients = () => {
-
-		Axios.get(url).then(
-			result => clients.value = result.data,
-			error => console.error(error)
+	const getClients = function() {
+		// debugger
+		Axios.get(api).then(
+			res => {
+				// debugger
+				clients.value = res.data
+			},
+			err => console.error(err)
 		)
+	}
 
+	const searchClients = function(term) {
+		// debugger
+		Axios.get(api, { params: { search: term } })
+			.then(res => {
+				if ( res.status == 200 ) clients.value = res.data // Result.data avec contrôle sur le résultat de l'appel
+			})
+			.catch(err =>{
+				console.log(error)
+			})
 	}
 	
-	return { clients, getClients }
+	return { clients, getClients, searchClients }
 }
