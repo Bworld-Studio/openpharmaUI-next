@@ -1,3 +1,10 @@
+### 0.2.4
+  - ✅ Bump to 0.2.4
+  - 🔁 Update all dependencies to latest
+  - 👕 Reorganisations in Vue files
+	- 🔨 Correction on auto routing functionality
+	- 🚧 Creation of the Products View
+	
 ### 0.2.3
   - ✅ Bump to 0.2.3
   - 🔁 Update all dependencies to latest
@@ -44,7 +51,7 @@
 ⚡ :zap:				Improving performance
 📜 :scroll:				Updating docs or readme
 🔑 :key:				Dealing with security
-🔁 :repeat:				Updating dependencies or data
+⬆️ :arrow_up:			Updating dependencies or data
 ✅ :white_check_mark:	New release is built
 👕 :shirt:				Refactoring or removing linter warnings
 ❌ :x:					Removing code or files

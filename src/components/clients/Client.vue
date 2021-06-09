@@ -2,6 +2,27 @@
 <div>
 	<Header v-bind="headerParams"/>
 	<div class="container__main container-fluid">
+		<div class="container-fluid">
+			<div class="row g-2">
+				<div class="col-6">
+					<div class="p"><h1>Identification</h1></div>
+					<p></p>
+				</div>
+				<div class="col-6">
+					<div class="p-3 border bg-light"> <h1>Adresse</h1></div>
+				<p></p>
+				</div>
+				<div class="col-6">
+					<div class="p-3 border bg-light"><h1>Prise en charge</h1></div>
+					<p>
+					</p>
+				</div>
+				<div class="col-6">
+					<div class="p-3 border bg-light"><h1>Physio pathologie</h1></div>
+					<p></p>
+				</div>
+			</div>
+		</div>
 		<form v-on:submit.prevent="addClient">
 			<span class="row">
 				<label for="numSSInput">{{ t('client.numss-input') }}</label>

@@ -65,7 +65,7 @@ export default {
 		const router = useRouter() // Import Router
 
 		const displayProduct = (client) => {
-			router.push({ name: 'product', params: { cis: product.cis, mode: 'D' } })
+			router.push({ name: 'Product', params: { cis: product.cis, mode: 'D' } })
 		}
 
 		// Header parameters

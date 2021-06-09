@@ -7,11 +7,10 @@ const loadRoutes = function () {
 	let routes = []
 	let files = import.meta.globEager('./components/**/**.vue')
 
-	
 	for ( const file in files ) {
 
 		let matched = file.split('/')
-		let name = matched[2]
+		let name = matched[3].split('.')[0]
 
 		let route = {
 			path: '/'+name,

@@ -66,13 +66,15 @@ export default {
 		// Navigation to Client.vue
 		const router = useRouter() // Import Router
 		const createClient = () => {
-			router.push({ name: 'client', params: { uuid: '' } })
+			router.push({ name: 'Client', params: { uuid: '' } })
 		}
 		const editClient = (client) => {
-			router.push({ name: 'client', params: { uuid: client.uuid, mode: 'E' } })
+			debugger
+			router.push({ name: 'Client', params: { uuid: client.uuid, mode: 'E' } })
 		}
 		const displayClient = (client) => {
-			router.push({ name: 'client', params: { uuid: client.uuid, mode: 'D' } })
+			debugger
+			router.push({ name: 'Client', params: { uuid: client.uuid, mode: 'D' } })
 		}
 
 		// const actions = [{ label: t('clients.action0') }, { label: t('clients.action1') } ]
