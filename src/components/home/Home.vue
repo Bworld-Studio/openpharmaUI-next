@@ -21,7 +21,7 @@
 	#home_view { height: 100%; }
 	.home { height: 100%; }
 	.home__main { height: 100%; }
-	.card__container { display: flex; flex-direction: row; justify-items: left; }
+	.card__container { display: flex; flex-direction: row; justify-items: left; flex-wrap: wrap; }
 	.card { margin: 1em }
 </style>
 

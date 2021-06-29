@@ -3,10 +3,16 @@
 <div id="template">
 	<Header v-bind="headerParams"/>
 	<div class="container__main container-fluid">
+<div class="form-input">
+  <label>
+    <input required>
+    <span class="placeholder">Text Input</span>
+  </label>
+</div>
 		<!-- <h2 class="title">{{ t('template.title') }}</h2> -->
-		<div>{{ t(varLabel) }}</div>
+		<!-- <div>{{ t(varLabel) }}</div> -->
 		<!-- <div v-bind="variable"></div> -->
-		<div>{{varStr}}</div>
+		<!-- <div>{{varStr}}</div> -->
 	</div>
 </div>
 </template>

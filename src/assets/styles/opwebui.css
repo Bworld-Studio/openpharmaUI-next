@@ -38,4 +38,63 @@
 	color: grey;
 }
 
-.container__main { margin-top: 0.5rem; height: calc(100% - 51px) }
+.container__main { height: calc(100% - 51px) }
+
+
+/* Test Input */
+.form-input {
+  margin: 40px 0;
+  width: 100%;
+}
+.form-input label {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 45px;
+}
+.form-input .placeholder {
+  position: absolute;
+  display: block;
+  top: 23px;
+  z-index: 2;
+  font-size: 16px;
+  transition: all 200ms ease-in-out;
+  width: 100%;
+  cursor: text;
+}
+.form-input input,
+.form-input textarea {
+  position: absolute;
+  top: 15px;
+  z-index: 1;
+  width: 100%;
+  font-size: 16px;
+  border: 0;
+  border-bottom: 1px solid grey;
+  transition: border-color 200ms ease-in-out;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+.form-input textarea {
+  min-height: 30px;
+  padding: 8px 0;
+}
+.form-input input {
+  height: 30px;
+}
+.form-input input:focus,
+.form-input input:valid,
+.form-input textarea:focus,
+.form-input textarea:valid {
+  border-bottom: 2px solid orange;
+}
+.form-input input:focus + .placeholder,
+.form-input input:valid + .placeholder,
+.form-input textarea:focus + .placeholder,
+.form-input textarea:valid + .placeholder {
+  top: 0;
+  cursor: inherit;
+  font-size: 14px;
+  color: orange;
+}

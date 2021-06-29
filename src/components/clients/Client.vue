@@ -1,51 +1,130 @@
 <template>
-<div>
+<div id="client">
 	<Header v-bind="headerParams"/>
-	<div class="container__main container-fluid">
-		<div class="container-fluid">
-			<div class="row g-2">
-				<div class="col-6">
-					<div class="p"><h1>Identification</h1></div>
-					<p></p>
-				</div>
-				<div class="col-6">
-					<div class="p-3 border bg-light"> <h1>Adresse</h1></div>
-				<p></p>
-				</div>
-				<div class="col-6">
-					<div class="p-3 border bg-light"><h1>Prise en charge</h1></div>
-					<p>
-					</p>
-				</div>
-				<div class="col-6">
-					<div class="p-3 border bg-light"><h1>Physio pathologie</h1></div>
-					<p></p>
-				</div>
-			</div>
-		</div>
 		<form v-on:submit.prevent="addClient">
-			<span class="row">
-				<label for="numSSInput">{{ t('client.numss-input') }}</label>
-				<div class="col">
-					<input type="text" v-model="client.numSS" :placeholder="t('client.numss-input')" id="numSSInput" class="form-control form-control-sm input_ss" size="13" />
+			<div class="container__main container-fluid">
+				<div class="card__container">
+					<div class="card green" style="width: 45%;">
+						<h2>{{ t('client.ident-title') }}</h2>
+						<div class="card__wrapper">
+							<div class="card__line">
+								<span>
+									<label for="lastNameInput">{{ t('client.name-input') }}</label>
+									<input type="text" v-model="client.lastName" :placeholder=" t('client.name-input')" :id="lastNameInput" class="form-control form-control-sm" />
+								</span>
+								<span>
+									<label for="firstNameInput">{{ t('client.firstname-input') }}</label>
+									<input type="text" v-model="client.firstName" :placeholder=" t('client.firstname-input')" :id="firstNameInput" class="form-control form-control-sm"/>
+								</span>
+							</div>
+							<div class="card__line">
+								<span>
+									<label for="birthDateInput">{{ t('client.birthdate-input') }}</label>
+									<input type="date" v-model="client.birthDate" :placeholder=" t('client.birthdate-input')" :id="birthDateInput" class="form-control form-control-sm"/>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="card" style="width: 45%;">
+						<h2>{{ t('client.address-title') }}</h2>
+						<div class="card__wrapper">
+							<div class="card__line">
+								<span>
+									<label for="addressInput">{{ t('client.address-input') }}</label>
+									<input type="text" v-model="client.address" :placeholder=" t('client.address-input')" :id="addressInput" class="form-control form-control-sm"/>
+								</span>
+							</div>
+							<div class="card__line">
+								<span>
+									<label for="address2Input">{{ t('client.address2-input') }}</label>
+									<input type="text" v-model="client.address2" :placeholder=" t('client.address2-input')" :id="address2Input" class="form-control form-control-sm"/>
+								</span>
+							</div>
+							<div class="card__line">
+								<span>
+									<label for="zipcodeInput">{{ t('client.zipcode-input') }}</label>
+									<input type="text" v-model="client.zipcode" :placeholder=" t('client.zipcode-input')" :id="zipcodeInput" class="form-control form-control-sm"/>
+								</span>
+								<span>
+									<label for="cityInput">{{ t('client.city-input') }}</label>
+									<input type="text" v-model="client.city" :placeholder=" t('client.city-input')" :id="cityInput" class="form-control form-control-sm"/>
+								</span>
+							</div>
+							<div class="card__line">
+								<span>
+									<label for="birthDateInput">{{ t('client.cellphone-input') }}</label>
+									<input type="tel" v-model="client.cellphone" :placeholder=" t('client.cellphone-input')" :id="cellphoneInput" pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" class="form-control form-control-sm" />
+								</span>
+							</div>
+							<div class="card_line">
+								<!-- <div class="form-input">
+									<label>
+										<input required>
+										<span class="placeholder">Text Input</span>
+									</label>
+								</div> -->
+							</div>
+						</div>
+					</div>
+					<div class="card" style="width: 45%;">
+						<h2>{{ t('client.care-title') }}</h2>
+						<div class="card__wrapper">
+							<div class="card__line">
+								<label for="numSSInput">{{ t('client.numss-input') }}</label>
+								<span>
+									<input type="text" v-model="client.numSS" :placeholder="t('client.numss-input')" id="numSSInput" class="form-control form-control-sm input_ss" size="13" />
+								</span>
+								<span>
+									<input type="number" v-model="client.cleSS" :placeholder="t('client.keyss-input')" id="cleSSInput" class="form-control form-control-sm input_key" min="0" max="99" size="2" />
+								</span>
+							</div>
+							<div class="card__line"></div>
+						</div>
+					</div>
+					<div class="card" style="width: 45%;">
+						<h2>{{ t('client.patho-title') }}</h2>
+					</div>
 				</div>
-				<div class="col">
-					<input type="number" v-model="client.cleSS" :placeholder="t('client.keyss-input')" id="cleSSInput" class="form-control form-control-sm input_key" min="0" max="99" size="2" />
-				</div>
-			</span>
-			<span class="row">
-				<label for="lastNameInput">{{ t('client.name-input') }}</label>
-				<input type="text" v-model="client.lastName" :placeholder=" t('client.name-input')" :id="lastNameInput" class="form-control form-control-sm" />
-			</span>
-			<span class="row">
-				<label for="firstNameInput">{{ t('client.firstname-input') }}</label>
-				<input type="text" v-model="client.firstName" :placeholder=" t('client.firstname-input')" :id="firstNameInput" class="form-control form-control-sm"/>
-			</span>
-			<span class="row">
-				<label for="birthDateInput">{{ t('client.birthdate-input') }}</label>
-				<input type="date" v-model="client.birthDate" :placeholder=" t('client.birthdate-input')" :id="birthDateInput" class="form-control form-control-sm"/>
-			</span>
-			<span class="row">
+				<div class="row g-2">
+						<!-- <div class="col-6">
+							<div class="p-4 border bg-light"><h1>Identification</h1></div>
+							<span class="row">
+								<div class="col">
+									<label for="lastNameInput">{{ t('client.name-input') }}</label>
+									<input type="text" v-model="client.lastName" :placeholder=" t('client.name-input')" :id="lastNameInput" class="form-control form-control-sm" />
+								</div>
+								<div class="col">
+									<label for="firstNameInput">{{ t('client.firstname-input') }}</label>
+									<input type="text" v-model="client.firstName" :placeholder=" t('client.firstname-input')" :id="firstNameInput" class="form-control form-control-sm"/>
+								</div>
+							</span>
+						</div> -->
+
+						<!-- <div class="col-6">
+							<div class="p-4 border bg-light"> <h1>Adresse</h1></div>
+						</div> -->
+						<!-- <div class="col-6">
+							<div class="p-4 border bg-light"><h1>Prise en charge</h1></div>
+								<p>
+									<span class="row">
+										<label for="numSSInput">{{ t('client.numss-input') }}</label>
+										<div class="col">
+											<input type="text" v-model="client.numSS" :placeholder="t('client.numss-input')" id="numSSInput" class="form-control form-control-sm input_ss" size="13" />
+										</div>
+										<div class="col">
+											<input type="number" v-model="client.cleSS" :placeholder="t('client.keyss-input')" id="cleSSInput" class="form-control form-control-sm input_key" min="0" max="99" size="2" />
+										</div>
+									</span>
+								</p>
+							</div> -->
+						<!-- <div class="col-6">
+							<div class="p-4 border bg-light"><h1>Physio pathologie</h1></div>
+								<p></p>
+						</div>			 -->
+			<!-- <span class="row">
+
+			</span> -->
+			<!-- <span class="row">
 				<label for="birthDateInput">{{ t('client.address-input') }}</label>
 				<input type="text" v-model="client.address" :placeholder=" t('client.address-input')" :id="addressInput" class="form-control form-control-sm"/>
 			</span>
@@ -60,11 +139,10 @@
 			<span class="row">
 				<label for="birthDateInput">{{ t('client.city-input') }}</label>
 				<input type="text" v-model="client.city" :placeholder=" t('client.city-input')" :id="cityInput" class="form-control form-control-sm"/>
-			</span>
-			<span class="row">
-				<label for="birthDateInput">{{ t('client.cellphone-input') }}</label>
-				<input type="tel" v-model="client.cellphone" :placeholder=" t('client.cellphone-input')" :id="cellphoneInput" pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" class="form-control form-control-sm" />
-			</span>
+			</span> -->
+			<!-- <span class="row">
+
+			</span> -->
 			<span class="row">
 				<label for="birthDateInput">{{ t('client.center-input') }}</label>
 				<input type="text" v-model="client.center" :placeholder=" t('client.center-input')" :id="centerInput" class="form-control form-control-sm"/>
@@ -77,12 +155,20 @@
 				<button v-if="client.isEdit == false" type="submit" class="btn btn-success btn-sm" >{{ t('buttons.save-button') }}</button> <!-- mt-3 -->
 				<button v-else v-on:click="updateClient()" type="button" class="btn btn-primary btn-sm mt-3" >{{ t('buttons.update-button') }}</button>
 			</span>
+				</div>
+			</div>
 		</form>
-	</div>
-</div>
+ </div>
 </template>
 
 <style>
+	/* .main__container { color: black; background-color: #f4f4f4; } */
+	#client .container__main { background-color: yellow; }
+	.card__container { display: flex; flex-direction: row; justify-items: left; flex-wrap: wrap; }
+	.card { margin: 1em }
+	.card.green { background-color: green; }
+	.card__line { display: flex; flex-direction: row; }
+	/* .card__line > span { display: flex; flex-direction: row; } */
 	.input_ss { width: 9em; }
 	.input_key { width: 3em; }
 	.input_key input[type=number], input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
@@ -111,7 +197,7 @@ export default {
 		
 		const api = '/api/clients' // Déclaration
 
-		debugger
+		// debugger
 
 		// const uuid = props.uuid
 		// const mode = props.mode
@@ -136,7 +222,7 @@ export default {
 		})
 
 		onMounted( () => {
-			debugger
+			// debugger
 			if ( props.uuid !== undefined && props.uuid !== '' ) {
 				client.value.uuid = props.uuid
 				getClient(props.uuid)
@@ -148,7 +234,7 @@ export default {
 			console.log(url)
 			Axios.get(url)		// Call API GET
 				.then(result => {
-					debugger
+					// debugger
 					mapClient(result.data)
 				}, error => { console.error(error) })
 		}
@@ -192,7 +278,6 @@ export default {
 				}).catch(err => { console.log(err) })
 		}
 
-		
 		return { client, addClient, updateClient, deleteClient, t }
 	}
 }

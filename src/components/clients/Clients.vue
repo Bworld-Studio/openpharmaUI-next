@@ -57,7 +57,7 @@ export default {
 
 		// API Calls
 		const search = (term) => {
-			debugger
+			// debugger
 			searchClients(term)
 		}
 
@@ -69,11 +69,11 @@ export default {
 			router.push({ name: 'Client', params: { uuid: '' } })
 		}
 		const editClient = (client) => {
-			debugger
+			// debugger
 			router.push({ name: 'Client', params: { uuid: client.uuid, mode: 'E' } })
 		}
 		const displayClient = (client) => {
-			debugger
+			// debugger
 			router.push({ name: 'Client', params: { uuid: client.uuid, mode: 'D' } })
 		}
 

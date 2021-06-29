@@ -42,6 +42,10 @@
 		}
 	},
 	"client": {
+		"ident-title": "Identification",
+		"address-title": "Adresse",
+		"care-title": "Prise en charge",
+		"patho-title": "Physio pathologie",
 		"numss-input": "Numéro de Sécurité Sociale",
 		"keyss-input": "Clé",
 		"name-input": "Nom",
