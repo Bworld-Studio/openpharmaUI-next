@@ -38,7 +38,7 @@
 			<div class="header__actions">
 				<div class="header__actions--buttons">
 					<button class="btn btn-primary me-3 btn-outline-secondary" type="button" id="button-action0" v-if="action0 !== undefined" v-on:click="action0()">{{actions[0].label}}</button>
-					<button class="btn btn-primary me-3 btn-outline-secondary" type="button" id="button-action1" v-if="action1 !== undefined" v-on:click="action1()">{{actions[1].label}}</button>
+					<button class="btn btn-success me-3 btn-outline-secondary" type="button" id="button-action1" v-if="action1 !== undefined" v-on:click="action1()">{{actions[1].label}}</button>
 				</div>
 			</div>
 			<div class="header__status" v-on:click="getStatus()">

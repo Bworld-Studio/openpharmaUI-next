@@ -20,7 +20,9 @@ const loadRoutes = function () {
 		}
 
 		// Specific routes
-		if ( route.name === 'home' ) route.path = '/'
+		if ( route.name === 'Home' ) {
+			route.path = '/'
+		}
 
 		// Import Vue component
 		const component = () => import(file /* @vite-ignore */)
