@@ -1,4 +1,4 @@
-# openpharma WebUI 0.2.3
+# openpharma WebUI 0.2.4
 
 ## Description
 This package is the Web UI for the openpharma application, it works on all browsers
