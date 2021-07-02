@@ -2,7 +2,7 @@
 	"global": {
 		"locale": "Français",
 		"lang": "fr-FR",
-		"openpharma": "openpharma",
+		"openpharma": "Openpharma",
 		"version": "WebUI 0.2.2"
 	},
 	"buttons": {
@@ -42,6 +42,8 @@
 		}
 	},
 	"client": {
+		"menu": "Patient",
+		"title": "Patient",
 		"ident-title": "Identification",
 		"address-title": "Adresse",
 		"care-title": "Prise en charge",

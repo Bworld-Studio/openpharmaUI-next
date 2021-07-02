@@ -8,7 +8,6 @@ import { Popover } from 'bootstrap'
 import './assets/styles/op.css'
 import './assets/styles/opwebui.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
-import 'less'
 
 // Internationalisation -- i18n
 const loadLocaleMessages = () => {

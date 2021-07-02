@@ -65,19 +65,22 @@ export default {
 
 		// Navigation to Client.vue
 		const router = useRouter() // Import Router
+
 		const createClient = () => {
 			router.push({ name: 'Client', params: { uuid: '' } })
 		}
+
 		const editClient = (client) => {
 			// debugger
 			router.push({ name: 'Client', params: { uuid: client.uuid, mode: 'E' } })
 		}
+
 		const displayClient = (client) => {
 			// debugger
 			router.push({ name: 'Client', params: { uuid: client.uuid, mode: 'D' } })
 		}
 
-		// const actions = [{ label: t('clients.action0') }, { label: t('clients.action1') } ]
+		// const actionsList = [{ label: t('clients.action0') }, { label: t('clients.action1') } ]
 		const headerParams = { view: 'clients', title: t('clients.title'), actions: [{ label: t('clients.action0') }, { label: t('clients.action1') } ] } // Header
 		provide('action0', getClients)
 		provide('action1', createClient)

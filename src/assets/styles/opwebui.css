@@ -40,6 +40,8 @@
 
 .container__main { height: calc(100% - 51px) }
 
+.card { margin: 1rem 0.2rem; }
+
 
 /* Test Input */
 .form-input {

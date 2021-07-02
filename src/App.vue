@@ -42,7 +42,7 @@
 				</li>
 				<li class="nav-item">
 					<img src="./assets/images/construction/021-spirit level.svg" style="margin-right: 8px; width: 41px">
-					<a class="nav-link" href="/Tiers-payant">TESt</a>
+					<a class="nav-link" href="/Tiers-payant">Tiers-payant</a>
 				</li>
 				<!-- <li class="nav-item">
 					<img src="./assets/images/ecology/035-light bulb.svg" style="margin-right: 8px; width: 41px">
