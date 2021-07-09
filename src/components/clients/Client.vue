@@ -5,7 +5,7 @@
 		<div class="container__main container-fluid">
 			<div class="card__container">
 				<div class="card" style="width: 45%">
-				<div class="card__title-color"><h3>{{ t('client.ident-title') }}</h3></div>
+				<div class="card__title"><h3>{{ t('client.ident-title') }}</h3></div>
 					<div class="card__wrapper">
 						<div class="card__line">
 							<span>
@@ -27,7 +27,7 @@
 
 				</div>
 				<div class="card" style="width: 45%;">
-				<div class="card__title-color"><h3>{{ t('client.address-title') }}</h3></div>
+				<div class="card__title"><h3>{{ t('client.address-title') }}</h3></div>
 					<div class="card__wrapper">
 						<div class="card__line">
 							<span>
@@ -68,7 +68,7 @@
 					</div>
 				</div>
 				<div class="card" style="width: 45%;">
-					<div class="card__title-color"><h3>{{ t('client.care-title') }}</h3></div>
+					<div class="card__title"><h3>{{ t('client.care-title') }}</h3></div>
 					<div class="card__wrapper">
 						<div class="card__line">
 							<label for="numSSInput">{{ t('client.numss-input') }}</label>
@@ -96,7 +96,7 @@
 					</div>
 				</div>
 				<div class="card" style="width: 45%;">
-					<div class="card__title-color"><h3>{{ t('client.patho-title') }}</h3></div>
+					<div class="card__title"><h3>{{ t('client.patho-title') }}</h3></div>
 				</div>
 			</div>
 			<!-- <div class="row g-2"> -->
