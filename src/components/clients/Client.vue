@@ -4,8 +4,8 @@
 	<form v-on:submit.prevent="addClient">
 		<div class="container__main container-fluid">
 			<div class="card__container">
-				<div class="card" style="width: 45%;">
-					<h3>{{ t('client.ident-title') }}</h3>
+				<div class="card" style="width: 45%">
+				<div class="card__title-color"><h3>{{ t('client.ident-title') }}</h3></div>
 					<div class="card__wrapper">
 						<div class="card__line">
 							<span>
@@ -27,7 +27,7 @@
 
 				</div>
 				<div class="card" style="width: 45%;">
-					<h3>{{ t('client.address-title') }}</h3>
+				<div class="card__title-color"><h3>{{ t('client.address-title') }}</h3></div>
 					<div class="card__wrapper">
 						<div class="card__line">
 							<span>
@@ -68,7 +68,7 @@
 					</div>
 				</div>
 				<div class="card" style="width: 45%;">
-					<h3>{{ t('client.care-title') }}</h3>
+					<div class="card__title-color"><h3>{{ t('client.care-title') }}</h3></div>
 					<div class="card__wrapper">
 						<div class="card__line">
 							<label for="numSSInput">{{ t('client.numss-input') }}</label>
@@ -96,7 +96,7 @@
 					</div>
 				</div>
 				<div class="card" style="width: 45%;">
-					<h3>{{ t('client.patho-title') }}</h3>
+					<div class="card__title-color"><h3>{{ t('client.patho-title') }}</h3></div>
 				</div>
 			</div>
 			<!-- <div class="row g-2"> -->
@@ -173,12 +173,12 @@
 </template>
 
 <style>
-	/* .main__container { color: black; background-color: #f4f4f4; } */
+	.container__main { color: black; background-color: #f4f4f4; } */
 	/* #client .container__main {  } */
 	.card__container { display: flex; flex-direction: row; justify-items: left; flex-wrap: wrap; }
-	.card { padding: 1rem 1rem; }
+	.card {}
+	.card__wrapper {margin: 1rem 1rem;}
 	.card > h3 { margin-bottom: 0.5rem; }
-	.card.green { background-color: green; }
 	.card__line { display: flex; flex-direction: row; }
 	/* .card__line > span { display: flex; flex-direction: row; } */
 	.input_ss { width: 9em; }
@@ -187,7 +187,8 @@
 		-moz-appearance: textfield;
 		-webkit-appearance: none;
 		margin: 0;
-	}
+		}
+	.card__title {color: white; background-color: #3ab595ff; padding: 0.5rem 1rem;}
 </style>
 
 <script>
